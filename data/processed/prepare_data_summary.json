@@ -1,0 +1,47 @@
+{
+  "num_documents": 714,
+  "num_questions": 6889,
+  "num_benchmark_files": 4,
+  "sample_size": 50,
+  "benchmark_stats": [
+    {
+      "benchmark_file": "data/raw/benchmarks/contractnli.json",
+      "source_benchmark": "contractnli",
+      "num_raw_cases": 977,
+      "num_converted_cases": 977,
+      "num_skipped_cases": 0
+    },
+    {
+      "benchmark_file": "data/raw/benchmarks/cuad.json",
+      "source_benchmark": "cuad",
+      "num_raw_cases": 4042,
+      "num_converted_cases": 4042,
+      "num_skipped_cases": 0
+    },
+    {
+      "benchmark_file": "data/raw/benchmarks/maud.json",
+      "source_benchmark": "maud",
+      "num_raw_cases": 1676,
+      "num_converted_cases": 1676,
+      "num_skipped_cases": 0
+    },
+    {
+      "benchmark_file": "data/raw/benchmarks/privacy_qa.json",
+      "source_benchmark": "privacy_qa",
+      "num_raw_cases": 194,
+      "num_converted_cases": 194,
+      "num_skipped_cases": 0
+    }
+  ],
+  "gold_evidence_stats": {
+    "total_gold_evidence": 10928,
+    "unresolved_doc_refs": 8,
+    "missing_offsets": 0,
+    "missing_text": 0
+  },
+  "output_files": {
+    "corpus_json": "data/processed/corpus.json",
+    "questions_json": "data/processed/questions.json",
+    "sample_questions_json": "data/processed/sample_questions.json"
+  }
+}

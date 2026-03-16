@@ -1,0 +1,863 @@
+[
+  {
+    "question_id": "maud_219",
+    "question": "Consider the Acquisition Agreement between Parent \"Tyler Technologies, Inc.\" and Target \"NIC Inc.\"; What is the Definition of \"Material Adverse Effect\"",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/NIC Inc._Tyler Technologies, Inc.",
+        "raw_file_path": "maud/NIC Inc._Tyler Technologies, Inc..txt",
+        "start_char": 277004,
+        "end_char": 282555,
+        "text": "“NIC Material Adverse Effect” means any Effect that, individually or in the aggregate, has had or would reasonably be expected to have a material adverse effect on the financial condition, business or operations of NIC and the NIC Subsidiaries, taken as a whole; provided, however, that no Effects to the extent resulting or arising from or relating to any of the following shall be deemed to constitute a NIC Material Adverse Effect or shall be taken into account when determining whether a NIC Material Adverse Effect exists or has occurred: (a) any changes or developments in United States, regional, global, or international economic conditions, including any changes or developments affecting financial, credit, foreign exchange, or capital market conditions; (b) any changes or developments in conditions in the industries in which NIC and the NIC Subsidiaries operate and any seasonal fluctuations in the business of NIC and the NIC Subsidiaries; (c) any changes or developments in political, geopolitical, regulatory, or legislative conditions in the United States or any other country or region of the world; (d) any changes or developments in GAAP or the interpretation thereof; (e) any changes or developments in applicable Law or the interpretation thereof; (f) any failure by NIC to meet any internal or published projections, estimates, forecasts or expectations of NIC’s revenue, earnings, or other financial performance or results of operations for any period, in and of itself, or any failure by NIC to meet its internal budgets, plans, guidance, estimates or forecasts of its revenues, earnings, or other financial performance or results of operations, in and of itself (it being understood that the facts or occurrences giving rise or contributing to such failure that are not otherwise excluded from this definition of a “NIC Material Adverse Effect” may be taken into account); (g) any acts of terrorism or sabotage, war (whether or not declared), the commencement, continuation, or escalation of a war, acts of armed hostility, weather conditions, natural disasters, or other force majeure events, including any material worsening of such conditions threatened or existing as of the date hereof; (h) any epidemic, pandemic or disease outbreak (including COVID-19) and any political or social conditions, including civil unrest, protests and public demonstrations or any other law, directive, pronouncement or guideline issued by a Governmental Authority, the Centers for Disease Control and Prevention or the World Health Organization, “sheltering in place,” curfews or other restrictions that relate to, or arise out of, an epidemic, pandemic or disease outbreak (including COVID-19) or any change in such law (including COVID-19 Measures), directive, pronouncement or guideline or interpretation thereof, or the action of any Third Party arising out of or relating to any of the foregoing, in each case, following the date hereof or any material improvement or worsening of such conditions threatened or existing as of the date hereof; (i) the execution and delivery of this Agreement, the identity of Tyler or any Tyler Subsidiary or any communication by Tyler or its Subsidiaries regarding the plans or intentions of Tyler with respect to the conduct of the business of the Surviving Corporation or its Subsidiaries, the pendency or consummation of this Agreement, the Merger and the other Transactions, including the effect thereof on the relationships with current or prospective customers, suppliers, distributors, partners, financing sources, employees, or sales representatives, or the public announcement of this Agreement or the Transactions, including any litigation arising out of or relating to this Agreement or the Transactions (provided that this clause (i) shall not apply to any representation or warranty to the extent the purpose of such representation or warranty is to address, as applicable, the consequences resulting from the execution and delivery of this Agreement, the pendency or consummation of this Agreement, the Merger, and the other Transactions); (j) any action or failure to take any action which action or failure to act is requested in writing by Tyler or otherwise expressly required by this Agreement (other than pursuant to Section 6.1(a)), (k) any change in the price or trading volume of the NIC Common Stock (it being understood that the facts or occurrences giving rise or contributing to such change that are not otherwise excluded from this definition of a “NIC Material Adverse Effect” may be taken into account), or (l) the loss or non-renewal of any customer, the termination or expiration of any Contract with any customer, or the failure to enter into any Contract with any prospective customer (it being understood that the facts or occurrences giving rise or contributing to such loss or non-renewal that are not otherwise excluded from this definition of a “NIC Material Adverse Effect” may be taken into account, as well as the aggregate loss or non-renewal of multiple Contracts); provided that with respect to the exceptions set forth in clauses (a), (b), (c), (d), (e), (g) and (h), if such Effect has had a disproportionate adverse effect on NIC or any NIC Subsidiary relative to other companies operating in the industries in which NIC and the NIC Subsidiaries operate, then only the incremental disproportionate adverse effect of such Effect shall be taken into account for the purpose of determining whether a NIC Material Adverse Effect exists or has occurred. \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_912",
+    "question": "Consider the Mutual Non-Disclosure Agreement between Inventor and Product Development Experts, Inc.; Does the document allow the Receiving Party to independently develop information that is similar to the Confidential Information?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/Mutual-Non-Disclosure-Agreement-Inventor-Product-Development-Experts-Inc.",
+        "raw_file_path": "contractnli/Mutual-Non-Disclosure-Agreement-Inventor-Product-Development-Experts-Inc..txt",
+        "start_char": 1586,
+        "end_char": 1661,
+        "text": "Confidential Information shall not, however, include any information which "
+      },
+      {
+        "doc_id": "contractnli/Mutual-Non-Disclosure-Agreement-Inventor-Product-Development-Experts-Inc.",
+        "raw_file_path": "contractnli/Mutual-Non-Disclosure-Agreement-Inventor-Product-Development-Experts-Inc..txt",
+        "start_char": 2301,
+        "end_char": 2526,
+        "text": "(v) is independently developed by the receiving party without use of or reference to the disclosing party's Confidential Information, as shown by documents and other competent evidence in the receiving party's possession; or "
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_204",
+    "question": "Consider Inaturals's Non-Disclosure Agreement; Does the document allow the Receiving Party to share some Confidential Information with their employees?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/Inaturals_NDA",
+        "raw_file_path": "contractnli/Inaturals_NDA.txt",
+        "start_char": 1204,
+        "end_char": 1495,
+        "text": "The Recipient will communicate such information only to such employees and contractors or agents who have a need to know such information, and only to such employees and contractors or agents having written agreements with the Recipient obligating them to keep such information confidential."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1055",
+    "question": "Consider the Acquisition Agreement between Parent \"Unifrax Holding Co.\" and Target \"Lydall, Inc.\"; Is there a Tail provision for acquisition proposals",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Lydall, Inc._Clearlake Capital Group, L.P.",
+        "raw_file_path": "maud/Lydall, Inc._Clearlake Capital Group, L.P..txt",
+        "start_char": 256292,
+        "end_char": 256324,
+        "text": "(b)            Termination Fee. "
+      },
+      {
+        "doc_id": "maud/Lydall, Inc._Clearlake Capital Group, L.P.",
+        "raw_file_path": "maud/Lydall, Inc._Clearlake Capital Group, L.P..txt",
+        "start_char": 257957,
+        "end_char": 258993,
+        "text": "(ii)            If, prior to receipt of the Company Stockholder Approval, (A) this Agreement is terminated pursuant to ​Section 10.01(b) (iii) (Company No Vote) or ​Section 10.01(c)(ii) (Company Breach), (B) after the date of this Agreement and prior to date of the Company Stockholder Meeting, an Acquisition Proposal shall have become public and (C) within 12 months after the date of such termination, an Acquisition Proposal shall have been consummated or the Company or its Subsidiaries has entered into a definitive agreement with respect to an Acquisition Proposal (provided that for purposes of this ​Section 11.04(b)(ii), each reference to “20%” in the definition of Acquisition Proposal shall be deemed to be a reference to “50%”), then the Company shall pay or cause to be paid to Parent in immediately available funds, concurrently with the earlier of the execution of a definitive agreement and the consummation of such Acquisition Proposal, the Termination Fee together with applicable Interest and Collection Costs.   \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1276",
+    "question": "Consider the Business Development Agreement between Liquidmetal Technologies, Inc. and Eutectix, LLC for Amorphous Alloy Collaboration; Are any of the licenses granted under this contract irrevocable or perpetual?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement",
+        "raw_file_path": "cuad/LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement.txt",
+        "start_char": 51205,
+        "end_char": 51425,
+        "text": "Eutectix hereby grants to Liquidmetal a fully-paid up, royalty-free, perpetual, world-wide, non-exclusive license to any New Process Technologies in which Eutectix acquires licensing rights pursuant to Section 8.2 above."
+      },
+      {
+        "doc_id": "cuad/LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement",
+        "raw_file_path": "cuad/LiquidmetalTechnologiesInc_20200205_8-K_EX-10.1_11968198_EX-10.1_Development Agreement.txt",
+        "start_char": 51478,
+        "end_char": 51787,
+        "text": "The Parties shall negotiate in good faith a royalty-bearing, perpetual, world-wide, non-exclusive license to any New Application Technology in which they acquire rights as set forth in Section 8.2.3 above. Royalties and other terms shall be commercially reasonable and negotiated by the Parties in good faith."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1029",
+    "question": "Consider the Affiliate Agreement between The TUBE Music Network, Inc. and Tribune Broadcasting Company for Broadcasting 'The TUBE' Service; What is the expiration date of this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/TubeMediaCorp_20060310_8-K_EX-10.1_513921_EX-10.1_Affiliate Agreement",
+        "raw_file_path": "cuad/TubeMediaCorp_20060310_8-K_EX-10.1_513921_EX-10.1_Affiliate Agreement.txt",
+        "start_char": 5319,
+        "end_char": 5412,
+        "text": "The \"Initial Term\" shall commence upon the Effective Date and shall expire on March 31, 2011."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_851",
+    "question": "Consider the Co-Branding Agreement between VerticalNet, Inc. and Impresse Corporation; What is the governing law for this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement",
+        "raw_file_path": "cuad/ImpresseCorp_20000322_S-1A_EX-10.11_5199234_EX-10.11_Co-Branding Agreement.txt",
+        "start_char": 39460,
+        "end_char": 39602,
+        "text": "This Agreement shall be governed by and interpreted under the laws of the State of Delaware without regard to its conflicts of law provisions."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_166",
+    "question": "Consider the Recipe Development Agreement between Reed's, Inc. and B C Marketing Concepts Inc. for Ginger-Based Alcohol Beverages; Is there uncapped liability under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/ReedsInc_20191113_10-Q_EX-10.4_11888303_EX-10.4_Development Agreement",
+        "raw_file_path": "cuad/ReedsInc_20191113_10-Q_EX-10.4_11888303_EX-10.4_Development Agreement.txt",
+        "start_char": 17591,
+        "end_char": 18213,
+        "text": "EXCEPT WITH RESPECT TO THE INDEMNIFICATION OBLIGATIONS SET FORTH IN SECTION 9 WITH REGARD TO CLAIMS BY THIRD PARTIES, IN NO EVENT SHALL EITHER PARTY BE LIABLE FOR CONSEQUENTIAL, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, PUNITIVE OR ENHANCED DAMAGES, LOST PROFITS OR REVENUES OR DIMINUTION IN VALUE ARISING OUT OF, RELATING TO, OR IN CONNECTION WITH ANY BREACH OF THIS AGREEMENT OR CLAIM HEREUNDER, REGARDLESS OF (A) WHETHER SUCH DAMAGES WERE FORESEEABLE, (B) WHETHER OR NOT IT WAS ADVISED OF THE POSSIBLITY OF SUCH DAMAGES, AND (C) THE LEGAL OR EQUITABLE THEORY (CONTRACT, TORT OR OTHERWISE) UPON WHICH THE CLAIM IS BASED."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1014",
+    "question": "Consider the Acquisition Agreement between Parent \"VENTAS, INC.\" and Target \"NEW SENIOR INVESTMENT GROUP INC.\"; Information about the Closing Condition: Compliance with Covenants",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/New Senior Investment Group Inc._Ventas, Inc.",
+        "raw_file_path": "maud/New Senior Investment Group Inc._Ventas, Inc..txt",
+        "start_char": 242075,
+        "end_char": 242342,
+        "text": "Section 6.2          Conditions to Obligations of Parent and Merger Sub. The obligation of Parent and Merger Sub to effect the Merger is subject to the satisfaction or waiver by Parent in writing, at or prior to the Closing, of the following additional conditions:   "
+      },
+      {
+        "doc_id": "maud/New Senior Investment Group Inc._Ventas, Inc.",
+        "raw_file_path": "maud/New Senior Investment Group Inc._Ventas, Inc..txt",
+        "start_char": 244384,
+        "end_char": 244601,
+        "text": "(b)               Performance of Company Obligations. The Company shall have performed in all material respects all of the obligations required to be performed by it under this Agreement at or prior to the Closing.   "
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_839",
+    "question": "Consider the Mutual Non-Disclosure Agreement between Boston Consulting Group and Unknown Party; Does the document indicate that the Agreement does not grant the Receiving Party any rights to the Confidential Information?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/BCG-Mutual-NDA",
+        "raw_file_path": "contractnli/BCG-Mutual-NDA.txt",
+        "start_char": 7876,
+        "end_char": 8002,
+        "text": "This agreement does not grant any implied intellectual property licenses to confidential information, except as stated above. "
+      }
+    ]
+  },
+  {
+    "question_id": "maud_524",
+    "question": "Consider the Acquisition Agreement between Parent \"Quikrete Holdings, Inc.\" and Target \"Forterra, Inc.\"; Where is the Specific Performance clause",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Forterra, Inc._Quikrete Holdings, Inc.",
+        "raw_file_path": "maud/Forterra, Inc._Quikrete Holdings, Inc..txt",
+        "start_char": 277374,
+        "end_char": 278136,
+        "text": "Section 8.10 Specific Performance. \n\n\n(a) The parties agree that irreparable damage would occur in the event that any of the provisions of this Agreement were not performed in accordance with their specific terms or were otherwise breached. Accordingly, each of the Company (on behalf of itself and on behalf of the holders of Shares as third party beneficiaries under Section 8.6), Parent and Merger Sub shall be entitled to specific performance of the terms hereof, including an injunction or injunctions to prevent breaches of this Agreement and to enforce specifically the terms and provisions of this Agreement in the appropriate court pursuant to Section 8.8, this being in addition to any other remedy to which such party is entitled at law or in equity. "
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1048",
+    "question": "Consider the Acquisition Agreement between Parent \"Unifrax Holding Co.\" and Target \"Lydall, Inc.\"; What is the Definition of \"Material Adverse Effect\"",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Lydall, Inc._Clearlake Capital Group, L.P.",
+        "raw_file_path": "maud/Lydall, Inc._Clearlake Capital Group, L.P..txt",
+        "start_char": 11503,
+        "end_char": 15592,
+        "text": "“Company Material Adverse Effect” means a material adverse effect on (x) the financial condition, assets, business or results of operations of the Company and its Subsidiaries, taken as a whole or (y) the ability of the Company and its Subsidiaries to perform their obligations under, or to consummate the transactions contemplated by, this Agreement, excluding, solely in the case of clause (x), any effect resulting directly or indirectly from (i) changes in GAAP or the official interpretation thereof, (ii) general economic, political, regulatory, legal or tax conditions in the United States or any other country or region, including changes in financial, credit, securities or currency markets (including changes in interest or exchange rates), (iii) conditions generally affecting the industries in which the Company and its Subsidiaries operate, (iv) changes in Applicable Law or the interpretation thereof, (v) geopolitical conditions, the outbreak or escalation of hostilities, acts of war, sabotage, terrorism, cyberattacks, natural disasters, acts of god, demonstrations, public disaster, epidemics, pandemics or other diseases (including COVID-19 and any COVID-19 Measures) including any deterioration or worsening thereof, (vi) the announcement, pendency, or consummation of the transactions contemplated by this Agreement or the announcement of Parent’s plans or intentions with respect to the conduct of the business of the Company following Closing, including the impact of any of the foregoing on the relationships, contractual or otherwise, of the Company and any of its Subsidiaries with customers, suppliers, service providers, employees, Governmental Authorities or any other Persons and any stockholder or derivative litigation relating to the execution, delivery and performance of this Agreement or the announcement or consummation of the transactions contemplated by this Agreement, (vii) any failure by the Company or any of its Subsidiaries to meet any internal or published budgets, projections, forecasts or predictions of financial performance or integration synergies for any period (it being understood that any underlying facts giving rise or contributing to such failure that are not otherwise excluded from the definition of a “Company Material Adverse Effect” may be taken into account in determining whether there has been a Company Material Adverse Effect), (viii) any actions taken (or omitted to be taken) by the Company or any of its Subsidiaries in order to comply with the obligations contained in Section 8.01 or at the written request of Parent or Merger Sub, or (ix) changes in the price and/or trading volume of the shares of Company Common Stock or any other securities of the Company on NYSE or any other market on which such securities are quoted for purchase and sale or changes in the credit ratings of the Company (it being understood that any underlying facts giving rise or contributing to such changes that are not otherwise excluded from the definition of a “Company Material Adverse Effect” may be taken into account in determining whether there has been a Company Material Adverse Effect) or (x) any actions taken (or omitted to be taken) by the Company or any of its Subsidiaries that are required to be taken (or omitted to be taken) pursuant to this Agreement, including any actions required under this Agreement to obtain any approvals, consents, registrations, permits, authorizations and other confirmations under applicable Competition Laws and Foreign Investment Laws for the consummation of the Merger, except, with respect to clauses (i), (ii), (iii) and (v), to the extent that such event has had a disproportionate adverse effect on the Company or any of its Subsidiaries relative to other companies operating in the industry or industries in which the Company or any of its Subsidiaries conducts business, in which case the incremental disproportionate adverse impact may be taken into account in determining whether there has occurred or would reasonably be expected to occur a Company Material Adverse Effect.  \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3490",
+    "question": "Consider the Licensing and Web Site Hosting Agreement between Mortgage Logic.com, Inc. and TrueLink, Inc.; Is there an anti-assignment clause in this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+        "raw_file_path": "cuad/BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT.txt",
+        "start_char": 25800,
+        "end_char": 26032,
+        "text": "Neither party shall assign or transfer any of its rights under this Agreement without the prior written approval of the other party, except no such approval shall be required for an assignment to a financially responsible affiliate."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_712",
+    "question": "Consider Simply Fashion's Non-Disclosure Agreement; Does the document permit the Receiving Party to retain some Confidential Information even after its return or destruction?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/simply-fashion---standard-nda",
+        "raw_file_path": "contractnli/simply-fashion---standard-nda.txt",
+        "start_char": 7790,
+        "end_char": 8291,
+        "text": "Notwithstanding anything herein to the contrary, Potential Purchaser, its Affiliated Entities, and its Representatives may retain one or more copies of the Evaluation Materials for the purpose of defending any claim related to this Agreement or any transaction related hereto, or as may be required in accordance with Potential Purchaser’s, its Affiliated Entities, or its Representatives’ respective legal, compliance, computer programs, server, software, and/or automated backup archiving practices."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3860",
+    "question": "Consider the Reseller Agreement between PivX Corporation and Detto Technologies for Qwik-Fix Pro Distribution; Is there a cap on liability under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT",
+        "raw_file_path": "cuad/ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT.txt",
+        "start_char": 16880,
+        "end_char": 17135,
+        "text": "EXCEPT FOR PIVX'S OBLIGATIONS UNDER SECTION 4.2, IN NO EVENT SHALL PIVX'S OR ITS LICENSORS' LIABILITY TO DETTO OR ANY THIRD PARTY ARISING OUT OF THIS AGREEMENT EXCEED THE TOTAL AMOUNT ACTUALLY RECEIVED BY PIVX HEREUNDER DURING THE PREVIOUS SIX (6) MONTHS."
+      },
+      {
+        "doc_id": "cuad/ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT",
+        "raw_file_path": "cuad/ADIANUTRITION,INC_04_01_2005-EX-10.D2-RESELLER AGREEMENT.txt",
+        "start_char": 20479,
+        "end_char": 20841,
+        "text": "In the event of termination in accordance with Section 5.1, PivX shall not be liable to Detto because of such termination for compensation, reimbursement or damages on account of the loss of prospective profits or anticipated sales or on account of expenditures, inventory, investments, leases or commitments in connection with the business or goodwill of Detto."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_2479",
+    "question": "Consider the Joint Venture Agreement between MJ Syndicated, Inc. and Simply Herbals for Manufacturing and Selling Health-Related Products; What is the governing law for this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/MJBIOTECH,INC_12_06_2018-EX-99.01-JOINT VENTURE AGREEMENT",
+        "raw_file_path": "cuad/MJBIOTECH,INC_12_06_2018-EX-99.01-JOINT VENTURE AGREEMENT.txt",
+        "start_char": 863,
+        "end_char": 1007,
+        "text": "By this Agreement the Participants enter into a general Joint Venture (the \"Joint Venture\") in accordance with the laws of The State of Florida."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_260",
+    "question": "Consider LiiON's Non-Disclosure Agreement; Does the document mention that some obligations of the Agreement may survive the termination of the Agreement?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/LiiON%20NDA%202-27-2015%20v1.0",
+        "raw_file_path": "contractnli/LiiON%20NDA%202-27-2015%20v1.0.txt",
+        "start_char": 7959,
+        "end_char": 8251,
+        "text": "The restrictions and obligations set forth in this Agreement shall survive any expiration or termination for five years from the date of such expiration or termination with respect to Confidential Information disclosed under this Agreement prior to the date of such expiration or termination."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_244",
+    "question": "Consider Kerber's Non-Disclosure Agreement; Does the document specify whether the Receiving Party is required to destroy or return Confidential Information upon the termination of the Agreement?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/Kerber_Non_Disclosure_Agreement",
+        "raw_file_path": "contractnli/Kerber_Non_Disclosure_Agreement.txt",
+        "start_char": 3846,
+        "end_char": 4065,
+        "text": "If either party elects not to pursue any further business undertaking, each party will promptly return upon request all tangible information including any and all copies thereof relating to all Confidential Information."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_767",
+    "question": "Consider the Mutual Non-Disclosure Agreement between Wayne Fueling Systems and Unknown Party; Does the document allow the Receiving Party to share some Confidential Information with their employees?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final",
+        "raw_file_path": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final.txt",
+        "start_char": 1828,
+        "end_char": 1890,
+        "text": "2. The Receiving Party agrees, except as required by law, to: "
+      },
+      {
+        "doc_id": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final",
+        "raw_file_path": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final.txt",
+        "start_char": 2375,
+        "end_char": 2883,
+        "text": "(iii) use the same degree of care as with its own confidential information, which shall be at least a reasonable standard of care, to prevent disclosure of the Confidential Information and Notes, except to its Affiliates, and its or their officers, directors, employees, agents, advisors, representatives, service providers, consultants and/or subcontractors (collectively, “Authorized Parties”), solely to the extent necessary to permit them to assist the Receiving Party in evaluating the Transaction; and "
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_814",
+    "question": "Consider the Co-Branding, Marketing, and Distribution Agreement between Amazon.com Commerce Services, Inc. and Audible Inc.; Are there any services to be provided after the termination of this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement",
+        "raw_file_path": "cuad/AudibleInc_20001113_10-Q_EX-10.32_2599586_EX-10.32_Co-Branding Agreement_ Marketing Agreement_ Investment Distribution Agreement.txt",
+        "start_char": 64675,
+        "end_char": 65088,
+        "text": "Upon any termination or expiration of the Term the Parties will cooperate in good faith to promote a smooth customer transition, and in any event, Company will, at ACSI's option, continue to operate the Mirror Company Site and offer Spoken-Word Audio Products through the Spoken-Word Audio Sub-Section in accordance with the terms of this Agreement for a period of up to six (6) months following such termination."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_928",
+    "question": "Consider the Co-Branding Agreement between VerticalNet, Inc. and PaperExchange.com, LLC; What licenses are granted under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+        "raw_file_path": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement.txt",
+        "start_char": 11283,
+        "end_char": 11526,
+        "text": "PaperExchange hereby grants VerticalNet an exclusive license to use, modify, enhance, reproduce, display, perform and transmit the PaperExchange Content, subject to and in accordance with the terms, conditions and provisions of this Agreement."
+      },
+      {
+        "doc_id": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+        "raw_file_path": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement.txt",
+        "start_char": 14846,
+        "end_char": 15181,
+        "text": "VerticalNet hereby grants to PaperExchange a non-exclusive, non-transferable license to use, reproduce, display and transmit the VerticalNet Content, solely in connection with the development, maintenance and operation of the PaperExchange Site, subject to and in accordance with the terms, conditions and provisions of this Agreement."
+      },
+      {
+        "doc_id": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+        "raw_file_path": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement.txt",
+        "start_char": 28484,
+        "end_char": 28654,
+        "text": "VerticalNet hereby grants to PaperExchange a non-exclusive, non-transferable, royalty-free, right and license to link to Pulp and Paper Online through a VerticalNet Link."
+      },
+      {
+        "doc_id": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement",
+        "raw_file_path": "cuad/PaperexchangeComInc_20000322_S-1A_EX-10.4_5202103_EX-10.4_Co-Branding Agreement.txt",
+        "start_char": 29211,
+        "end_char": 29381,
+        "text": "PaperExchange hereby grants VerticalNet a non-exclusive, non-transferable, royalty-free, right and license to link to the PaperExchange Site through a PaperExchange Link."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3162",
+    "question": "Consider the Exclusive Distributor Agreement between IMRS Operations Inc. and Delteq Pte Ltd.; What is the governing law for this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/HYPERIONSOFTWARECORP_09_28_1994-EX-10.47-EXCLUSIVE DISTRIBUTOR AGREEMENT",
+        "raw_file_path": "cuad/HYPERIONSOFTWARECORP_09_28_1994-EX-10.47-EXCLUSIVE DISTRIBUTOR AGREEMENT.txt",
+        "start_char": 34415,
+        "end_char": 34578,
+        "text": "This Agreement shall be governed by and construed in accordance with the laws of the State of Connecticut, U.S.A. without regard to its conflict of taws provision."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3954",
+    "question": "Consider the Supply Agreement between MediWound Ltd. and Vericel Corporation; Does this contract include any volume restrictions?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT",
+        "raw_file_path": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT.txt",
+        "start_char": 20489,
+        "end_char": 20814,
+        "text": "The Parties agree and acknowledge that, as of the Effective Date, MediWound's current Facility can fill orders from Vericel for use in the Territory up to [***] of Intermediate Drug Product, whether provided in that form or in the form of the equivalent amount of Finished Product within a calendar year (\"Maximum Capacity\")."
+      },
+      {
+        "doc_id": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT",
+        "raw_file_path": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT.txt",
+        "start_char": 28064,
+        "end_char": 28511,
+        "text": "If a Purchase Order contains quantities of Products in excess of the quantity of such Product forecasted for such quarter (as was set forth at the Rolling Forecast submitted immediately prior to the beginning of such Calendar Year) by an amount greater than [***] of the Binding Forecast (\"Excess Amount\"), MediWound will accept the Purchase Order up to, but not including the Excess Amount which in any event will not exceed the Maximum Capacity."
+      },
+      {
+        "doc_id": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT",
+        "raw_file_path": "cuad/VERICELCORP_08_06_2019-EX-10.10-SUPPLY AGREEMENT.txt",
+        "start_char": 33196,
+        "end_char": 33420,
+        "text": "The remaining shelf-life for each Product for the Territory shall be at least [***] of the FDA approved shelf-life of such Product, as measured from the time of delivery of such Product to Vericel (the \"Minimum Shelf Life\")."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_217",
+    "question": "Consider JB Machine LLC's Non-Disclosure Agreement; Does the document allow the Receiving Party to share some Confidential Information with their employees?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/JB-Machine-LLC-NDA-1",
+        "raw_file_path": "contractnli/JB-Machine-LLC-NDA-1.txt",
+        "start_char": 4832,
+        "end_char": 4922,
+        "text": "In consideration for the receipt by the Recipient of information, the Recipient agrees to:"
+      },
+      {
+        "doc_id": "contractnli/JB-Machine-LLC-NDA-1",
+        "raw_file_path": "contractnli/JB-Machine-LLC-NDA-1.txt",
+        "start_char": 5317,
+        "end_char": 5436,
+        "text": "- The Recipient is not to disclose any information to any employees of the Recipient, aside from the employees required"
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3620",
+    "question": "Consider the Restated Net Investment Income Maintenance Agreement between Securian Funds Trust, Advantus Capital Management, Inc., and Securian Financial Services, Inc.; What is the renewal term for this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/SECURIANFUNDSTRUST_05_01_2012-EX-99.28.H.9-NET INVESTMENT INCOME MAINTENANCE AGREEMENT",
+        "raw_file_path": "cuad/SECURIANFUNDSTRUST_05_01_2012-EX-99.28.H.9-NET INVESTMENT INCOME MAINTENANCE AGREEMENT.txt",
+        "start_char": 6009,
+        "end_char": 6468,
+        "text": "This Agreement shall continue in effect for a period of one year from the date of its execution and from year to year thereafter provided such  continuance is specifically approved by a majority of the trustees of the Trust who (i) are not \"interested persons\" of the Trust or any other party  to this Agreement, as defined in the 1940 Act, and (ii) have no direct or indirect financial interest in the operation of this Agreement (\"Non- Interested Trustees\")"
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_651",
+    "question": "Consider the Sponsorship and Services Agreement between HOF Village, LLC, National Football Museum, Inc., and Constellation NewEnergy, Inc.; What licenses are granted under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement",
+        "raw_file_path": "cuad/GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement.txt",
+        "start_char": 15760,
+        "end_char": 16348,
+        "text": "The HOF Entities grant to Constellation a nonexclusive, nontransferable, royalty-free license to use the marks set forth on Exhibit F (\"HOF Entity Marks\") in the United States or online during the Term solely in connection with (i) Constellation's use and promotion of the designations set forth on Exhibit E in connection with commercial activations, marketing promotions, commercial programs and marketing programs related to the Village, (ii) B2B-related and B2C-related marketing activities approved by the HOF Entities and (iii) as otherwise expressly contemplated by this Agreement."
+      },
+      {
+        "doc_id": "cuad/GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement",
+        "raw_file_path": "cuad/GpaqAcquisitionHoldingsInc_20200123_S-4A_EX-10.8_11951679_EX-10.8_Service Agreement.txt",
+        "start_char": 19450,
+        "end_char": 20004,
+        "text": "Constellation grants to the HOF Entities a nonexclusive, nontransferable, royalty-free license to use the marks set forth on Exhibit G (\"Constellation's Marks\") in the United States or online throughout the Term solely in connection with the Sponsorship Rights, the advertising and promotion of the Village, including any musical, athletic or other live performance events at the Village, in connection with the name of the Center for Excellence and/or any Co-Branded Center for Excellence Logos and otherwise as expressly contemplated by this Agreement."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_846",
+    "question": "Consider the Acquisition Agreement between Parent \"ICON PLC\" and Target \"PRA Health Sciences, Inc.\"; I want information about the Limitations on Antitrust Efforts",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/PRA Health Sciences, Inc._ICON plc",
+        "raw_file_path": "maud/PRA Health Sciences, Inc._ICON plc.txt",
+        "start_char": 398476,
+        "end_char": 399837,
+        "text": "(d)              Divestitures; Other Limitations. Notwithstanding anything to the contrary contained in this Agreement, none of Parent or its Subsidiaries shall be required to, and none of the Company and its Subsidiaries shall, without the prior written consent of Parent, take any action, or commit to take any action, or agree to any condition or limitation contemplated in this Section 8.04 that is not conditioned on the consummation of the Merger or that would constitute or result in, or would reasonably be expected to constitute or result in, individually or in the aggregate, any sale, divestiture, license or disposition of any assets, properties or businesses, or any other action concession or undertaking, or any commitment to do any of the foregoing, that, individually or in the aggregate, would reasonably be expected to have a material adverse effect on Parent, the Company and their respective Subsidiaries, taken as a whole (a “Burdensome Condition”); provided, that if requested by Parent, the Company will become subject to, consent to, or offer or agree to, or otherwise take any action with respect to, any such requirement, condition, limitation, understanding, agreement, or Order so long as such requirement, condition, limitation, understanding, agreement, or Order is only binding on the Company in the event the Closing occurs. \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "maud_304",
+    "question": "Consider the Acquisition Agreement between Parent \"Eagle Parent Holdings L.P.\" and Target \"Extended Stay America, Inc.\" and \"ESH Hospitality, Inc.\"; What about the Fiduciary exception to the No-Shop Clause",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Extended Stay America, Inc._Investment Group.pdf||Extended Stay America, Inc._Investment Group Amendment No. 1",
+        "raw_file_path": "maud/Extended Stay America, Inc._Investment Group.pdf||Extended Stay America, Inc._Investment Group Amendment No. 1.txt",
+        "start_char": 207221,
+        "end_char": 207304,
+        "text": "7.5          Acquisition Proposals.   (a)         No Solicitation or Negotiation.  "
+      },
+      {
+        "doc_id": "maud/Extended Stay America, Inc._Investment Group.pdf||Extended Stay America, Inc._Investment Group Amendment No. 1",
+        "raw_file_path": "maud/Extended Stay America, Inc._Investment Group.pdf||Extended Stay America, Inc._Investment Group Amendment No. 1.txt",
+        "start_char": 209381,
+        "end_char": 212101,
+        "text": "Notwithstanding anything to the contrary in the foregoing provisions of this Section 7.5(a) but subject to the Paired Entities’ compliance with this Section 7.5, at an y time prior to the time, but not after, the Requisite Vote is obtained, the Paired Entities, the Paired Entities Subsidiaries and their Representatives may (A) provide information (to any such person, its Representatives, affiliates and its prospective financing sources) in response to a request therefor by a person who has made an unsolicited bona fide written Acquisition Proposal (not resulting from a breach of this Section 7.5) after the date of this Agreement if the Paired Entities receive from the person so requesting such information a confidentiality agreement on terms not less restrictive to such person than those contained in the Confidentiality Agreement; it being understood that such confidentiality agreement need not include explicit or implicit standstill provisions that would restrict the making, amendment or modification of a confidential Acquisition Proposal (an “Acceptable Confidentiality Agreement”); provided, however, that any such non- public information has previously been made available to Parent or will be made available to Parent prior to, or substantially concurrently with (and in any event within 48 hours of), the time such information is made available to such person, its Representatives, affiliates and its prospective financing sources or (B) engage or otherwise participate in any discussions or negotiations with any person or group of persons who has made such an Acquisition Proposal; if and only to the extent that, (I) prior to taking any action described in clause (A) or (B) directly above, the Company Board and the Hospitality Board determine in good faith, after consultation with their financial advisor and outside legal counsel, that failure to take such action, in light of the Acquisition Proposal and the terms of this Agreement, would be inconsistent with the directors’ fiduciary duties under applicable Law and (II) in each such case referred to in clause (A) or (B) directly above, the Company Board and the Hospitality Board have determined in good faith based on the information then available and after consultation with their financial advisor and outside legal counsel that such Acquisition Proposal either constitutes a Superior Proposal or would reasonably be expected to result in a Superior Proposal. Each of the Paired Entities agrees that any breach of this Section 7.5 by any of the Paired Entities Subsidiaries or any Representatives of the Paired Entities or the Paired Entities Subsidiaries shall be deemed to be a  breach of this Agreement by the Paired Entities.   "
+      }
+    ]
+  },
+  {
+    "question_id": "maud_726",
+    "question": "Consider the Acquisition Agreement between Parent \"SIEMENS HEALTHINEERS HOLDING I GMBH\" and Target \"VARIAN MEDICAL SYSTEMS, INC.\"; What are the Ordinary course of business covenants",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Varian Medical Systems, Inc._Siemens Healthineers AG",
+        "raw_file_path": "maud/Varian Medical Systems, Inc._Siemens Healthineers AG.txt",
+        "start_char": 136899,
+        "end_char": 138585,
+        "text": "Section 5.1      Conduct of Business by the Company and Parent.   (a)           From and after the date hereof and prior to the Effective Time or the date, if any, on which this Agreement is earlier terminated pursuant to Section 7.1 (the “Termination Date”), except (i) as may be required by applicable Law or any Governmental Entity of competent jurisdiction, (ii) for any actions taken reasonably and in good faith to respond to COVID-19 Measures (provided that prior to taking any material actions that the Company intends to take, to the extent the Company intends to take such actions in reliance on this clause (ii), the Company will use commercially reasonable efforts to provide advance notice to and consult with Parent (if reasonably practicable) prior to taking such actions), (iii) as may be consented to in writing by Parent (which consent shall not be unreasonably withheld, delayed or conditioned); provided that Parent shall be deemed to have consented in writing if it provides no response within five (5) business days after a request by the Company for such consent, (iv) as may be required or expressly contemplated by this Agreement, or (v) as otherwise set forth in Section 5.1 of the Company Disclosure Schedule, the Company covenants and agrees with Parent to use commercially reasonable efforts to, and to cause each of its Subsidiaries to use its commercially reasonable efforts to, conduct the business of the Company and its Subsidiaries in all material respects in the ordinary course of business and, to the extent consistent therewith, use commercially reasonable efforts to preserve its assets and business organization intact in all material respects; "
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3487",
+    "question": "Consider the Licensing and Web Site Hosting Agreement between Mortgage Logic.com, Inc. and TrueLink, Inc.; What is the renewal term for this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT",
+        "raw_file_path": "cuad/BNCMORTGAGEINC_05_17_1999-EX-10.4-LICENSING AND WEB SITE HOSTING AGREEMENT.txt",
+        "start_char": 24777,
+        "end_char": 25064,
+        "text": "This Agreement shall renew automatically thereafter for successive one year periods until terminated pursuant to Section 12 herein or unless either Client or TrueLink deliver to the other written notice of intent not to renew no later than thirty (30) days prior to the end of said year."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_2459",
+    "question": "Consider the Promotion Agreement between Janssen Biotech, Inc. and Immunomedics, Inc.; How is intellectual property ownership assigned in this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/IMMUNOMEDICSINC_08_07_2019-EX-10.1-PROMOTION AGREEMENT",
+        "raw_file_path": "cuad/IMMUNOMEDICSINC_08_07_2019-EX-10.1-PROMOTION AGREEMENT.txt",
+        "start_char": 92831,
+        "end_char": 93174,
+        "text": "To the extent that Company, by operation of Law or otherwise, acquires any right (other than pursuant to this Agreement) to any of the Product Trademarks, any other Trademarks of Janssen, such copyrights or such other intellectual property rights, Company shall assign to Janssen all such rights at Janssen's cost and will not claim ownership."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_828",
+    "question": "Consider the Co-Branding and Advertising Agreement between I-Escrow, Inc. and 2TheMart.com, Inc.; Are there any services to be provided after the termination of this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/2ThemartComInc_19990826_10-12G_EX-10.10_6700288_EX-10.10_Co-Branding Agreement_ Agency Agreement",
+        "raw_file_path": "cuad/2ThemartComInc_19990826_10-12G_EX-10.10_6700288_EX-10.10_Co-Branding Agreement_ Agency Agreement.txt",
+        "start_char": 18086,
+        "end_char": 18358,
+        "text": "Notwithstanding the foregoing, unless this Agreement was terminated for a material breach, all provisions of this Agreement shall survive to the extent necessary for i-Escrow to complete any Customer transactions which are pending at the time of expiration or termination."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_2702",
+    "question": "Consider the Agency Agreement between Biopure Corporation and The Butler Company for Oxyglobin Veterinary Products; Can this contract be terminated for convenience, and under what conditions?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT",
+        "raw_file_path": "cuad/BIOPURECORP_06_30_1999-EX-10.13-AGENCY AGREEMENT.txt",
+        "start_char": 27636,
+        "end_char": 27871,
+        "text": "Either party may, at its option, terminate this Agreement       without cause, effective at any time after January 31, 1999, upon giving       at least ninety (90) days prior written notice of such termination to the       other party."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_3850",
+    "question": "Consider the Sponsorship Agreement between ANTHEMIC, LLC and VNUE, INC for FLOODfest Chicago 2015; Is there a covenant not to sue included in this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/VNUE,INC_07_10_2015-EX-10.1-SPONSORSHIP AGREEMENT",
+        "raw_file_path": "cuad/VNUE,INC_07_10_2015-EX-10.1-SPONSORSHIP AGREEMENT.txt",
+        "start_char": 9099,
+        "end_char": 9272,
+        "text": "ANTHEMIC will not, at any time during or after the Effective Date, dispute or contest, directly or indirectly, the Sponsor's exclusive ownership in the Sponsor's trademarks."
+      },
+      {
+        "doc_id": "cuad/VNUE,INC_07_10_2015-EX-10.1-SPONSORSHIP AGREEMENT",
+        "raw_file_path": "cuad/VNUE,INC_07_10_2015-EX-10.1-SPONSORSHIP AGREEMENT.txt",
+        "start_char": 9740,
+        "end_char": 9906,
+        "text": "The Sponsor will not, at any time after the Effective Date, dispute or contest, directly or indirectly, ANTHEMIC's exclusive ownership in their respective trademarks."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1301",
+    "question": "Consider the Co-Development Agreement between PhaseBio Pharmaceuticals Inc. and SFJ Pharmaceuticals X, Ltd. for Clinical Trials of Ticagrelor Compound; Does this contract include any right of first refusal, right of first offer, or right of first negotiation?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement",
+        "raw_file_path": "cuad/PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement.txt",
+        "start_char": 163373,
+        "end_char": 164104,
+        "text": "PB shall not, without SFJ's prior written consent, enter into a Licensing Transaction unless such Licensing Transaction is an Excluded Licensing Transaction (in which case such prohibition shall not apply and no such consent of SFJ shall be required); provided that SFJ shall only be entitled to withhold such consent as to a Licensing Transaction other than an Excluded Licensing Transaction in the event SFJ reasonably determines, and provides PB with written notice of its determination within [***] of PB providing to SFJ a non-binding term sheet or comparable document summarizing the material terms of the proposed Licensing Transaction [***], that PB entering into such Licensing Transaction would [***] (\"Material Impact\")."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1611",
+    "question": "Consider the Acquisition Agreement between Parent \"UNITEDHEALTH GROUP INCORPORATED\" and Target \"CHANGE HEALTHCARE INC.\"; What happens during a Breach of No-Shop clause",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated",
+        "raw_file_path": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated.txt",
+        "start_char": 257087,
+        "end_char": 257298,
+        "text": "9.4. Termination by Parent. Subject to Section 9.5(a), this Agreement may be terminated and the transactions contemplated by this Agreement may be abandoned at any time prior to the Effective Time by Parent: \n\n\n"
+      },
+      {
+        "doc_id": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated",
+        "raw_file_path": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated.txt",
+        "start_char": 258444,
+        "end_char": 258521,
+        "text": "(b) at any time prior to the time the Requisite Company Vote is obtained, if "
+      },
+      {
+        "doc_id": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated",
+        "raw_file_path": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated.txt",
+        "start_char": 258593,
+        "end_char": 258777,
+        "text": "(ii) the Company shall have materially breached the obligations set forth in Section 7.2(a) (No Solicitation). \n\n\n9.5. Notice of Termination; Effect of Termination and Abandonment. \n\n\n"
+      },
+      {
+        "doc_id": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated",
+        "raw_file_path": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated.txt",
+        "start_char": 260126,
+        "end_char": 260266,
+        "text": "(c) In the event this Agreement is terminated and the transactions contemplated by this Agreement abandoned pursuant to this Article IX: \n\n\n"
+      },
+      {
+        "doc_id": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated",
+        "raw_file_path": "maud/Change Healthcare Inc._UnitedHealth Group Incorporated.txt",
+        "start_char": 262357,
+        "end_char": 262653,
+        "text": "(ii) by Parent pursuant to Section 9.4(b) (Change of Recommendation; Non-Solicit Breach), then the Company shall pay or cause to be paid to Parent the Termination Fee by wire transfer of immediately available funds within three Business Days following the date of such termination and abandonment"
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_53",
+    "question": "Consider Eskom's Confidentiality and Non-Disclosure Agreement; Does the document permit the Receiving Party to retain some Confidential Information even after its return or destruction?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/Eskom%20Template%20Confidentiality%20and%20Non-disclosure%20Agreement%20Rev%204%20Effective%20August%202017_11",
+        "raw_file_path": "contractnli/Eskom%20Template%20Confidentiality%20and%20Non-disclosure%20Agreement%20Rev%204%20Effective%20August%202017_11.txt",
+        "start_char": 9390,
+        "end_char": 10266,
+        "text": "10.2. To the extent that it is not practically able to comply with 10.1, the Receiving Party shall destroy or ensure the destruction of all material and/or data in whatever form relating to the Confidential Information disclosed pursuant to the terms of this Agreement and delete, remove or erase or use best efforts to ensure the deletion, erasure or removal from any computer or database or document retrieval system under its or the Representatives' possession or control, all Confidential Information and all documents or files containing or reflecting any Confidential Information, in a manner that makes the deleted, removed or erased data permanently irrecoverable. The Receiving Party shall furnish the Disclosing Party with a written statement signed by one of its directors or duly authorized senior officers to the effect that all such material has been destroyed. "
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1197",
+    "question": "Consider the Acquisition Agreement between Parent \"Sky Parent Inc.\" and Target \"Cloudera, Inc.\"; Information about the Fiduciary Termination Right Triggers for termination",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Cloudera, Inc._Investment Group",
+        "raw_file_path": "maud/Cloudera, Inc._Investment Group.txt",
+        "start_char": 315819,
+        "end_char": 316129,
+        "text": "8.1    Termination. This Agreement may be validly terminated, and the transactions contemplated by this Agreement may be abandoned, at any time prior to the Effective Time only as follows (it being understood and agreed that this Agreement may not be terminated for any other reason or on any other basis): \n\n\n"
+      },
+      {
+        "doc_id": "maud/Cloudera, Inc._Investment Group",
+        "raw_file_path": "maud/Cloudera, Inc._Investment Group.txt",
+        "start_char": 321565,
+        "end_char": 322282,
+        "text": "(h)    by the Company, at any time prior to receiving the Requisite Stockholder Approval, if (i) the Company has received a Superior Proposal; (ii) the Company Board (or a committee thereof) has authorized the Company to enter into a definitive Alternative Acquisition Agreement to consummate the Acquisition Transaction contemplated by that Superior Proposal in accordance with Section 5.3; (iii) the Company has complied in all material respects with its obligations under Section 5.3 with respect to such Superior Proposal; and (iv) substantially concurrently with (but no later than the date of) such termination the Company pays the Company Termination Fee due to Parent in accordance with Section 8.3(b); or \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1582",
+    "question": "Consider the Acquisition Agreement between Parent \"Covert Intermediate, Inc.\" and Target \"Covanta Holding Corporation\"; What is the Target's Representation & Warranty of No Material Adverse Effect, with regards to some specified date",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Covanta_Holding_Corporation_EQT_Holdings_AB",
+        "raw_file_path": "maud/Covanta_Holding_Corporation_EQT_Holdings_AB.txt",
+        "start_char": 110210,
+        "end_char": 110447,
+        "text": "Section 3.10 Absence of Certain Changes. Since the date of the Company Balance Sheet through the date of this Agreement, (a) there has not been any event, change, development or occurrence that has had a Company Material Adverse Effect, "
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_330",
+    "question": "Consider the Sponsored Research and License Agreement between ArTara, Inc. and The University of Iowa for TARA-002 Development; Can this contract be terminated for convenience, and under what conditions?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/ArtaraTherapeuticsInc_20200110_8-K_EX-10.5_11943350_EX-10.5_License Agreement",
+        "raw_file_path": "cuad/ArtaraTherapeuticsInc_20200110_8-K_EX-10.5_11943350_EX-10.5_License Agreement.txt",
+        "start_char": 32627,
+        "end_char": 32727,
+        "text": "This Agreement may be terminated by ArTara upon thirty (30) days prior written notice to University."
+      },
+      {
+        "doc_id": "cuad/ArtaraTherapeuticsInc_20200110_8-K_EX-10.5_11943350_EX-10.5_License Agreement",
+        "raw_file_path": "cuad/ArtaraTherapeuticsInc_20200110_8-K_EX-10.5_11943350_EX-10.5_License Agreement.txt",
+        "start_char": 32761,
+        "end_char": 32945,
+        "text": "Either Party may terminate the Project and all commitments and obligations with respect thereto, subject to Section 8.3 herein, upon thirty (30) days written notice to the other Party."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_700",
+    "question": "Consider the Merger Agreement between \"Cincinnati Bell Inc.\" and \"RF Merger Sub Inc.\"; Where is the Specific Performance clause",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Cincinnati Bell Inc._Macquarie Infrastructure and Real Assets",
+        "raw_file_path": "maud/Cincinnati Bell Inc._Macquarie Infrastructure and Real Assets.txt",
+        "start_char": 294268,
+        "end_char": 295233,
+        "text": "SECTION 9.10.          Specific Enforcement.  The parties hereto agree that irreparable damage for which monetary relief (including any fees payable pursuant to Section 6.06), even if available, would not be an adequate remedy would occur in the event that any provision of this Agreement is not performed in accordance with its specific terms or is otherwise breached, including if the parties hereto fail to take any action required of them hereunder to consummate this Agreement and the Transactions.  Subject to the following sentence, the parties acknowledge and agree that (a) the parties shall be entitled to an injunction or injunctions, specific performance or other equitable relief to prevent breaches of this Agreement and to enforce specifically the terms and provisions hereof in the courts described in Section 9.08(b) without proof of damages or otherwise, this being in addition to any other remedy to which they are entitled under this Agreement, "
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_2485",
+    "question": "Consider the Joint Venture Agreement between MJ Syndicated, Inc. and Simply Herbals for Manufacturing and Selling Health-Related Products; What are the insurance requirements under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/MJBIOTECH,INC_12_06_2018-EX-99.01-JOINT VENTURE AGREEMENT",
+        "raw_file_path": "cuad/MJBIOTECH,INC_12_06_2018-EX-99.01-JOINT VENTURE AGREEMENT.txt",
+        "start_char": 19086,
+        "end_char": 19364,
+        "text": "The Joint Venture may acquire insurance on behalf of any Participant, employee, agent or other person engaged in the business interest of the Joint Venture against any liability asserted against them or incurred by them while acting in good faith on behalf of the Joint Venture."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1810",
+    "question": "Consider the Servicing Agreement between CURO RECEIVABLES FINANCE II, LLC and CURO MANAGEMENT, LLC; Are there any third-party beneficiaries designated in this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/CUROGROUPHOLDINGSCORP_05_04_2020-EX-10.3-SERVICING AGREEMENT",
+        "raw_file_path": "cuad/CUROGROUPHOLDINGSCORP_05_04_2020-EX-10.3-SERVICING AGREEMENT.txt",
+        "start_char": 33320,
+        "end_char": 33550,
+        "text": "Notwithstanding anything to the contrary in this Agreement, both the Owner and Servicer agree that the Agent shall be deemed to be a third-party beneficiary of this Agreement and has the authority to enforce the provisions hereof."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1299",
+    "question": "Consider the Co-Development Agreement between PhaseBio Pharmaceuticals Inc. and SFJ Pharmaceuticals X, Ltd. for Clinical Trials of Ticagrelor Compound; Does this contract include an exclusivity agreement?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement",
+        "raw_file_path": "cuad/PhasebioPharmaceuticalsInc_20200330_10-K_EX-10.21_12086810_EX-10.21_Development Agreement.txt",
+        "start_char": 203343,
+        "end_char": 204097,
+        "text": "SFJ shall use commercially reasonable efforts to obtain from each Third Party contractor that SFJ or its Affiliate proposes to engage to conduct activities under or in connection with this Agreement on behalf of SFJ or its Affiliates (i) an assignment, (ii) an exclusive, worldwide, royalty-free, fully-paid, freely-assignable license, with the right to sublicense through multiple tiers, or (iii) a non‑exclusive, worldwide, royalty-free, fully-paid, freely-assignable license, with the right to sublicense through multiple tiers ((i) through (iii) in order of preference), to PB of any Trial Invention that such Third Party contractor conceives, discovers, develops or otherwise makes in connection with activities conducted relating to this Agreement."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_296",
+    "question": "Consider the e-business Hosting Agreement between IBM and The Quantum Group Inc.; Is there uncapped liability under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/QuantumGroupIncFl_20090120_8-K_EX-99.2_3672910_EX-99.2_Hosting Agreement",
+        "raw_file_path": "cuad/QuantumGroupIncFl_20090120_8-K_EX-99.2_3672910_EX-99.2_Hosting Agreement.txt",
+        "start_char": 21007,
+        "end_char": 21456,
+        "text": "In no event will either party be liable to the other for special, incidental, or indirect damages or for any consequential damages (including lost profits or savings), even if they are informed of the possibility; provided that this Section 10.0 does not apply to Customer's failure to pay any amounts owing to IBM under this Agreement (including amounts owing for Services that would have been rendered but for Customer's breach of this Agreement)."
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_786",
+    "question": "Consider the Gas Transportation Agreement between PennTex North Louisiana Operating, LLC and MRD Operating LLC; What are the audit rights under this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/PenntexMidstreamPartnersLp_20150416_S-1A_EX-10.4_9042833_EX-10.4_Transportation Agreement",
+        "raw_file_path": "cuad/PenntexMidstreamPartnersLp_20150416_S-1A_EX-10.4_9042833_EX-10.4_Transportation Agreement.txt",
+        "start_char": 30799,
+        "end_char": 31257,
+        "text": "Each Party or its designated representatives shall, upon reasonable notice to the other Party, have the right, no more frequently than two (2) times per twelve (12) consecutive calendar Months, at its own expense, at reasonable times and during normal business hours, to examine the books and records of such other Party to the extent necessary to verify the accuracy of any statement, charge, computation, or demand made under or pursuant to this Agreement."
+      }
+    ]
+  },
+  {
+    "question_id": "maud_1235",
+    "question": "Consider the Merger Agreement between \"Oaktree Strategic Income Corporation\" and \"Oaktree Specialty Lending Corporation\"; What are the Ordinary course of business covenants",
+    "source_benchmark": "maud",
+    "gold_evidence": [
+      {
+        "doc_id": "maud/Oaktree_Strategic_Income_Oaktree_Fund_Advisors",
+        "raw_file_path": "maud/Oaktree_Strategic_Income_Oaktree_Fund_Advisors.txt",
+        "start_char": 129810,
+        "end_char": 130695,
+        "text": "6.1. Conduct of Businesses Prior to the Effective Time. During the period from the date of this Agreement until the earlier of the Effective Time and the date, if any, on which this Agreement is terminated pursuant to Section 9.1, except as may be required by Law, as expressly permitted by this Agreement or with the prior written consent of the other parties hereto, which prior written consent shall not be unreasonably delayed, conditioned or withheld, each of OCSL and OCSI shall, and shall cause each of its respective Consolidated Subsidiaries to, (a) conduct its business in the ordinary course of business and consistent with past practice and each of OCSI’s and OCSL’s investment objectives and policies as publicly disclosed, respectively, and (b) use reasonable best efforts to maintain and preserve intact its business organization and existing business relationships. \n\n\n"
+      }
+    ]
+  },
+  {
+    "question_id": "cuad_1780",
+    "question": "Consider the Support and Maintenance Agreement between XACCT Technologies, Inc. and Licensee; What is the expiration date of this contract?",
+    "source_benchmark": "cuad",
+    "gold_evidence": [
+      {
+        "doc_id": "cuad/XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT",
+        "raw_file_path": "cuad/XACCT Technologies, Inc.SUPPORT AND MAINTENANCE AGREEMENT.txt",
+        "start_char": 8979,
+        "end_char": 9161,
+        "text": "The initial term of this Agreement is one (1) year from the date of          delivery of the Product to Licensee unless earlier terminated in          accordance with this Agreement."
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_837",
+    "question": "Consider Aspiegel's Non-Disclosure Agreement; Does the document allow the Receiving Party to share some Confidential Information with their employees?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/Aspiegel_NDA_template",
+        "raw_file_path": "contractnli/Aspiegel_NDA_template.txt",
+        "start_char": 3089,
+        "end_char": 3203,
+        "text": "Representative(s): means employees, agents, officers, professional advisers and Affiliates of the Recipient Party."
+      },
+      {
+        "doc_id": "contractnli/Aspiegel_NDA_template",
+        "raw_file_path": "contractnli/Aspiegel_NDA_template.txt",
+        "start_char": 3865,
+        "end_char": 3967,
+        "text": "In consideration of the mutual disclosure of Confidential Information the Recipient Party undertakes:-"
+      },
+      {
+        "doc_id": "contractnli/Aspiegel_NDA_template",
+        "raw_file_path": "contractnli/Aspiegel_NDA_template.txt",
+        "start_char": 4469,
+        "end_char": 5273,
+        "text": "(d) not at any time, whether the negotiations proceed or not, to copy, disclose or otherwise make available to any third party without the written consent of the Disclosing Party, any of the Confidential Information of the Disclosing Party other than to its Representatives who are required for the Purpose to receive and consider the Confidential Information provided that the Recipient Party informs its Representatives of the confidential nature of the Confidential Information before disclosure and procures that its Representatives shall, in relation to any Confidential Information disclosed to them, comply with this Agreement as if they were the Recipient Party and the Recipient Party shall at all times be liable for the failure of any Representative to comply with the terms of this Agreement;"
+      }
+    ]
+  },
+  {
+    "question_id": "contractnli_759",
+    "question": "Consider the Mutual Non-Disclosure Agreement between Wayne Fueling Systems and Unknown Party; Does the document require that all Confidential Information be expressly identified by the Disclosing Party?",
+    "source_benchmark": "contractnli",
+    "gold_evidence": [
+      {
+        "doc_id": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final",
+        "raw_file_path": "contractnli/wayne-fueling-systems-mutual-non-disclosure-agreement-final.txt",
+        "start_char": 968,
+        "end_char": 1267,
+        "text": "Confidential Information also includes, but is not limited to, personal data as defined in this Agreement or by applicable law, whichever is broader, and personal data shall not be required to be marked “Confidential” or “Proprietary” to be treated as Confidential Information under this Agreement. "
+      }
+    ]
+  }
+]
