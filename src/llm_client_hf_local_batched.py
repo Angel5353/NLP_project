@@ -150,7 +150,7 @@ class HFLocalLLMClient(BaseLLMClient):
 
         try:
             import torch
-            from transformers import pipeline
+            from transformers import pipeline, AutoTokenizer
         except ImportError as e:
             raise ImportError(
                 "transformers and torch are required for hf_local. Install them with: pip install transformers torch accelerate"
@@ -169,18 +169,36 @@ class HFLocalLLMClient(BaseLLMClient):
             self.device_map,
             self.torch_dtype,
             self.trust_remote_code,
+            self.batch_size,
+            self.max_new_tokens,
+            "left_padding_no_sampling",
         )
         if cache_key in _HF_PIPELINE_CACHE:
             self.pipe = _HF_PIPELINE_CACHE[cache_key]
             return
 
-        pipeline_kwargs = {
+        tokenizer = AutoTokenizer.from_pretrained(
+            self.model_name,
+            trust_remote_code=self.trust_remote_code,
+            padding_side="left",
+        )
+
+        if tokenizer.pad_token is None:
+            if tokenizer.eos_token is not None:
+                tokenizer.pad_token = tokenizer.eos_token
+            else:
+                tokenizer.add_special_tokens({"pad_token": "[PAD]"})
+
+        pipeline_kwargs: Dict[str, Any] = {
             "task": "text-generation",
             "model": self.model_name,
+            "tokenizer": tokenizer,
             "trust_remote_code": self.trust_remote_code,
         }
+
         if resolved_dtype is not None:
-            pipeline_kwargs["dtype"] = resolved_dtype
+            pipeline_kwargs["torch_dtype"] = resolved_dtype
+
         if self.device_map == "auto":
             pipeline_kwargs["device_map"] = "auto"
         elif self.device_map == "cpu":
@@ -189,19 +207,30 @@ class HFLocalLLMClient(BaseLLMClient):
             pipeline_kwargs["device_map"] = self.device_map
 
         self.pipe = pipeline(**pipeline_kwargs)
+
+        # Force deterministic generation and clear any model default sampling config.
+        if hasattr(self.pipe, "model") and hasattr(self.pipe.model, "generation_config"):
+            gen_cfg = self.pipe.model.generation_config
+            gen_cfg.do_sample = False
+            gen_cfg.temperature = None
+            gen_cfg.top_p = None
+            gen_cfg.top_k = None
+
         _HF_PIPELINE_CACHE[cache_key] = self.pipe
 
-    def _build_gen_kwargs(self, temperature: float = 0.0, batch_size: Optional[int] = None) -> Dict[str, Any]:
-        do_sample = temperature > 0
-        gen_kwargs: Dict[str, Any] = {
+    def _build_gen_kwargs(
+        self,
+        temperature: float = 0.0,
+        batch_size: Optional[int] = None,
+    ) -> Dict[str, Any]:
+        # Intentionally ignore temperature and disable sampling entirely.
+        return {
             "max_new_tokens": self.max_new_tokens,
-            "do_sample": do_sample,
+            "do_sample": False,
             "return_full_text": False,
             "batch_size": batch_size or self.batch_size,
+            "pad_token_id": self.pipe.tokenizer.pad_token_id,
         }
-        if do_sample:
-            gen_kwargs["temperature"] = max(temperature, 1e-5)
-        return gen_kwargs
 
     def generate(self, prompt: str, temperature: float = 0.0) -> str:
         outputs = self.generate_batch([prompt], temperature=temperature)
@@ -214,7 +243,10 @@ class HFLocalLLMClient(BaseLLMClient):
         last_error: Optional[Exception] = None
         for attempt in range(1, self.max_retries + 1):
             try:
-                outputs = self.pipe(prompts, **self._build_gen_kwargs(temperature=temperature))
+                outputs = self.pipe(
+                    prompts,
+                    **self._build_gen_kwargs(temperature=temperature),
+                )
                 results: List[str] = []
                 for item in outputs:
                     if not item:
