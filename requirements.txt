@@ -8,3 +8,4 @@ faiss-cpu>=1.7.4
 sentence-transformers>=3.0.0
 langchain-text-splitters>=0.2.0
 openai>=1.30.0
+accelerate>=0.30.0
