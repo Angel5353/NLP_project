@@ -208,29 +208,38 @@ class HFLocalLLMClient(BaseLLMClient):
 
         self.pipe = pipeline(**pipeline_kwargs)
 
-        # Force deterministic generation and clear any model default sampling config.
         if hasattr(self.pipe, "model") and hasattr(self.pipe.model, "generation_config"):
             gen_cfg = self.pipe.model.generation_config
-            gen_cfg.do_sample = False
-            gen_cfg.temperature = None
-            gen_cfg.top_p = None
-            gen_cfg.top_k = None
 
         _HF_PIPELINE_CACHE[cache_key] = self.pipe
+
 
     def _build_gen_kwargs(
         self,
         temperature: float = 0.0,
         batch_size: Optional[int] = None,
     ) -> Dict[str, Any]:
-        # Intentionally ignore temperature and disable sampling entirely.
-        return {
+        gen_kwargs = {
             "max_new_tokens": self.max_new_tokens,
-            "do_sample": False,
+            "min_new_tokens": 50,
             "return_full_text": False,
             "batch_size": batch_size or self.batch_size,
             "pad_token_id": self.pipe.tokenizer.pad_token_id,
+            "eos_token_id": self.pipe.tokenizer.eos_token_id,
+            "early_stopping": True,
+            "repetition_penalty": 1.2,
+            "length_penalty": 0.9, 
         }
+        
+        if temperature > 0.0:
+            gen_kwargs["do_sample"] = True
+            gen_kwargs["temperature"] = temperature
+            gen_kwargs["top_p"] = 0.95
+            gen_kwargs["top_k"] = 50
+        else:
+            gen_kwargs["do_sample"] = False
+        
+        return gen_kwargs
 
     def generate(self, prompt: str, temperature: float = 0.0) -> str:
         outputs = self.generate_batch([prompt], temperature=temperature)
@@ -252,9 +261,13 @@ class HFLocalLLMClient(BaseLLMClient):
                     if not item:
                         results.append("")
                     elif isinstance(item, list):
-                        results.append((item[0].get("generated_text", "") or "").strip())
+                        text = (item[0].get("generated_text", "") or "").strip()
+                        text = self._clean_generated_text(text) 
+                        results.append(text)
                     else:
-                        results.append((item.get("generated_text", "") or "").strip())
+                        text = (item.get("generated_text", "") or "").strip()
+                        text = self._clean_generated_text(text)  
+                        results.append(text)
                 return results
             except Exception as e:
                 last_error = e
@@ -266,7 +279,66 @@ class HFLocalLLMClient(BaseLLMClient):
         raise LLMClientError(
             f"Hugging Face local batch generation failed after {self.max_retries} attempts: {last_error}"
         )
+    
+    def _deduplicate_text(self, text: str) -> str:
+        """Removes duplicate paragraphs from the generated text while preserving order."""
+        paragraphs = text.split('\n\n')
+        seen = set()
+        unique_paragraphs = []
+        
+        for para in paragraphs:
+            para_normalized = para.strip()
+            if para_normalized and para_normalized not in seen:
+                seen.add(para_normalized)
+                unique_paragraphs.append(para)
+        
+        return '\n\n'.join(unique_paragraphs)
 
+    
+    def _clean_generated_text(self, text: str) -> str:
+        """Removes lines that are likely to be part of the model's internal reasoning process rather than the final answer."""
+        lines = text.split('\n')
+        cleaned_lines = []
+        
+        for line in lines:
+            line_lower = line.strip().lower()
+            
+            if line_lower.startswith(('okay,', 'wait,', 'let me', 'i think', 
+                                       'i need', 'first,', 'second,', 'finally,',
+                                       'alright,', 'so,', 'well,', 'hmm,',
+                                       'actually,', 'basically,')):
+                continue
+            
+            if line.strip():
+                cleaned_lines.append(line)
+        
+        result = '\n'.join(cleaned_lines).strip()
+        
+        result = self._ensure_complete_sentence(result)
+        
+        return result
+
+    def _ensure_complete_sentence(self, text: str) -> str:
+        """Checks if the text ends with a complete sentence. If not, it attempts to trim off any incomplete trailing fragments to return only the last complete sentence."""
+        
+        text = text.rstrip()
+
+        if text.endswith(('.', '!', '?', '"""', "'''", '）')):
+            return text
+        
+        sentences = text.split('.')
+        
+        if len(sentences) > 1:
+            complete_text = '.'.join(sentences[:-1]) + '.'
+            return complete_text
+
+        if ',' in text:
+            last_comma_pos = text.rfind(',')
+            complete_text = text[:last_comma_pos].rstrip()
+            if complete_text:
+                return complete_text + '.'
+
+        return text
 
 def build_llm_client(
     provider: str = "openai",

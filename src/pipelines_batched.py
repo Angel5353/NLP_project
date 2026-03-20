@@ -4,6 +4,7 @@ from dataclasses import dataclass, asdict
 from typing import List, Dict, Any, Optional
 
 
+
 # =========================
 # Prompt templates
 # =========================
@@ -13,13 +14,15 @@ STANDARD_RAG_PROMPT = """You are a legal QA assistant.
 Answer the question using only the provided evidence.
 If the evidence is insufficient, say so clearly.
 Do not make unsupported claims.
+Provide a direct answer only. Do not show your thinking process or reasoning steps.
 
 Question:
 {question}
 
 Evidence:
 {evidence}
-"""
+
+Answer:"""
 
 SUFFICIENCY_PROMPT = """You are judging whether the retrieved legal evidence is sufficient to answer the question reliably.
 
@@ -29,16 +32,16 @@ Question:
 Retrieved evidence:
 {evidence}
 
-Reply with exactly one word:
+Reply with exactly one word only (no explanation):
 sufficient
 or
-insufficient
-"""
+insufficient"""
 
 REWRITE_PROMPT = """Rewrite the following legal question into a short retrieval-oriented query.
 
 Keep the meaning unchanged.
 Focus on legal concepts, clause names, obligations, permissions, entities, or conditions.
+Provide only the rewritten query without any explanation.
 
 Original question:
 {question}
@@ -46,21 +49,22 @@ Original question:
 Retrieved evidence:
 {evidence}
 
-Return only the rewritten query.
-"""
+Rewritten query:"""
 
 FINAL_AGENTIC_PROMPT = """You are a legal QA assistant.
 
 Use only the evidence below to answer the question.
 Do not add unsupported claims.
 If the evidence is insufficient, say so explicitly.
+Provide a direct answer only. Do not show your thinking process or reasoning steps.
 
 Question:
 {question}
 
 Evidence:
 {evidence}
-"""
+
+Answer:"""
 
 
 # =========================
@@ -171,7 +175,19 @@ class LLMOnlyPipeline:
         self.llm = llm
 
     def build_prompt(self, question_item: Dict[str, Any]) -> str:
-        return question_item["question"]
+        question = question_item["question"]
+        
+        prompt = f"""You are a legal QA assistant.
+
+Provide a clear, comprehensive answer. Write multiple sentences if needed. 
+Ensure your answer is complete and ends with a proper sentence terminator (period, question mark, or exclamation mark).
+Do not include reasoning, thinking process, or meta-commentary.
+
+Question:
+{question}
+
+Answer:"""
+        return prompt
 
     def make_result(self, question_item: Dict[str, Any], answer: str) -> Dict[str, Any]:
         return LLMOnlyResult(
