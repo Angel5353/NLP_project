@@ -137,3 +137,59 @@ Parameters:
   - `standard_rag_recursive`: Standard RAG using the recursive-chunk FAISS index
   - `agentic_rag_fixed`: Agentic RAG using the fixed-chunk FAISS index
   - `agentic_rag_recursive`: Agentic RAG using the recursive-chunk FAISS index
+ 
+
+# 6. Evaluation
+## 6.1 Retrieval performance
+Pipeline | Chunking Strategy | Precision@5 | Recall@5
+Standard RAG | Fixed-size | XX.XX	| XX.XX
+Standard RAG | Recursive | XX.XX | XX.XX
+Agentic RAG | Fixed-size | XX.XX | XX.XX
+Agentic RAG | Recursive | XX.XX | XX.XX
+
+## 6.2 Answer performance
+Pipeline | Chunking Strategy | Answer Correctness | Evidence Grounding | Hallucination Rate
+LLM-only | — | XX.XX | XX.XX | XX.XX
+Standard RAG | Fixed-size | XX.XX | XX.XX | XX.XX
+Standard RAG | Recursive | XX.XX | XX.XX | XX.XX
+Agentic RAG | Fixed-size | XX.XX | XX.XX | XX.XX
+Agentic RAG | Recursive | XX.XX | XX.XX | XX.XX
+
+## 6.3 Effect of Agentic Retrieval
+Metric | Standard RAG | Agentic RAG
+Precision@5 | XX.XX | XX.XX
+Recall@5 | XX.XX | XX.XX
+Answer Correctness | XX.XX | XX.XX
+Evidence Grounding | XX.XX | XX.XX
+Hallucination Rate | XX.XX | XX.XX
+
+## 6.4 Effect of Chunking Strategy
+Pipeline | Fixed-size Correctness | Recursive Correctness | Fixed-size Grounding | Recursive Grounding
+Standard RAG | XX.XX | XX.XX | XX.XX | XX.XX
+Agentic RAG | XX.XX | XX.XX | XX.XX | XX.XX
+
+---
+
+# Experiment setup
+Goal: evaluate whether agentic retrieval strategies can improve legal question answering compared with a conventional standard RAG pipeline
+
+1. Three systems: LLM-only baseline, Standard RAG baseline, Agentic RAG
+2. Dataset and knowledge base: LegalBench-RAG-mini as the dataset and LegalBench-RAG corpus as the knowledge base
+3. Document chunking strategies:
+- Fixed-size chunking: documents are split into chunks of 500 characters with 100 characters of overlap.
+- Recursive chunking: documents are split using a recursive text splitter, with an approximate chunk size of 500 characters and 100 characters of overlap, while attempting to preserve sentence or paragraph boundaries.
+4. Retrieval Settings:
+- embedding model: bge-large-en-v1.5
+- store chunk embeddings in FAISS vector index
+- retrieve the top 5 chunks for each query
+5. Agentic retrieval workflow:
+- first retrieves the top-5 chunks
+- llm evaluates whether the retrieved evidence is sufficient to answer the question
+- if insufficient, the model rewrites the query
+- perform second-round top-5 retrieval using the rewritten query
+- evidence from both rounds is merged and deduplicated
+- maximum total evidence chunks used for final generation: 8
+6. LLM generator model and prompting
+- model: qwen3:8b 
+- use different prompts for three systems
+7. Evaluation: retrieval performance/answer performance
