@@ -141,32 +141,36 @@ Parameters:
 
 # 6. Evaluation
 ## 6.1 Retrieval performance
-Pipeline | Chunking Strategy | Precision@5 | Recall@5
-Standard RAG | Fixed-size | XX.XX	| XX.XX
-Standard RAG | Recursive | XX.XX | XX.XX
-Agentic RAG | Fixed-size | XX.XX | XX.XX
-Agentic RAG | Recursive | XX.XX | XX.XX
+| Pipeline | Chunking Strategy | Precision@5 | Recall@5 |
+|---|---|---|---|
+| Standard RAG | Fixed-size | XX.XX | XX.XX |
+| Standard RAG | Recursive | XX.XX | XX.XX |
+| Agentic RAG | Fixed-size | XX.XX | XX.XX |
+| Agentic RAG | Recursive | XX.XX | XX.XX |
 
 ## 6.2 Answer performance
-Pipeline | Chunking Strategy | Answer Correctness | Evidence Grounding | Hallucination Rate
-LLM-only | — | XX.XX | XX.XX | XX.XX
-Standard RAG | Fixed-size | XX.XX | XX.XX | XX.XX
-Standard RAG | Recursive | XX.XX | XX.XX | XX.XX
-Agentic RAG | Fixed-size | XX.XX | XX.XX | XX.XX
-Agentic RAG | Recursive | XX.XX | XX.XX | XX.XX
+| Pipeline | Chunking Strategy | Answer Correctness | Evidence Grounding | Hallucination Rate |
+|---|---|---|---|---|
+| LLM-only | — | XX.XX | XX.XX | XX.XX |
+| Standard RAG | Fixed-size | XX.XX | XX.XX | XX.XX |
+| Standard RAG | Recursive | XX.XX | XX.XX | XX.XX |
+| Agentic RAG | Fixed-size | XX.XX | XX.XX | XX.XX |
+| Agentic RAG | Recursive | XX.XX | XX.XX | XX.XX |
 
 ## 6.3 Effect of Agentic Retrieval
-Metric | Standard RAG | Agentic RAG
-Precision@5 | XX.XX | XX.XX
-Recall@5 | XX.XX | XX.XX
-Answer Correctness | XX.XX | XX.XX
-Evidence Grounding | XX.XX | XX.XX
-Hallucination Rate | XX.XX | XX.XX
+| Metric | Standard RAG | Agentic RAG |
+|---|---|---|
+| Precision@5 | XX.XX | XX.XX |
+| Recall@5 | XX.XX | XX.XX |
+| Answer Correctness | XX.XX | XX.XX |
+| Evidence Grounding | XX.XX | XX.XX |
+| Hallucination Rate | XX.XX | XX.XX |
 
 ## 6.4 Effect of Chunking Strategy
-Pipeline | Fixed-size Correctness | Recursive Correctness | Fixed-size Grounding | Recursive Grounding
-Standard RAG | XX.XX | XX.XX | XX.XX | XX.XX
-Agentic RAG | XX.XX | XX.XX | XX.XX | XX.XX
+| Pipeline | Fixed-size Correctness | Recursive Correctness | Fixed-size Grounding | Recursive Grounding |
+|---|---|---|---|---|
+| Standard RAG | XX.XX | XX.XX | XX.XX | XX.XX |
+| Agentic RAG | XX.XX | XX.XX | XX.XX | XX.XX |
 
 ---
 
