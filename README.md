@@ -166,12 +166,6 @@ Parameters:
 | Evidence Grounding | XX.XX | XX.XX |
 | Hallucination Rate | XX.XX | XX.XX |
 
-## 6.4 Effect of Chunking Strategy
-| Pipeline | Fixed-size Correctness | Recursive Correctness | Fixed-size Grounding | Recursive Grounding |
-|---|---|---|---|---|
-| Standard RAG | XX.XX | XX.XX | XX.XX | XX.XX |
-| Agentic RAG | XX.XX | XX.XX | XX.XX | XX.XX |
-
 ---
 
 # Experiment setup
