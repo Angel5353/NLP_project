@@ -85,7 +85,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 Step 2. Download the model
 ```bash
-ollama pull qwen3:8b
+ollama pull gemma3:12b
 ```
 
 Step 3. Start the Ollama server
@@ -98,7 +98,7 @@ Step 4. Run the experiment
 python src/run_experiments_hf_local_batched.py \
   --questions_path data/processed/questions_mini.json \  
   --llm_provider ollama \
-  --generator_model qwen3:8b \
+  --generator_model gemma3:12b \
   --ollama_base_url http://localhost:11434/v1 \
   --output_dir outputs_llm_only \
   --start_index 0 \
@@ -188,6 +188,6 @@ Goal: evaluate whether agentic retrieval strategies can improve legal question a
 - evidence from both rounds is merged and deduplicated
 - maximum total evidence chunks used for final generation: 8
 6. LLM generator model and prompting
-- model: qwen3:8b 
+- model: gemma3:12b / qwen3:8b 
 - use different prompts for three systems
 7. Evaluation: retrieval performance/answer performance
