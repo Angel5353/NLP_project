@@ -1,0 +1,11 @@
+numpy>=1.26
+pandas>=2.2
+tqdm>=4.66
+scikit-learn>=1.5
+matplotlib>=3.8
+jupyter>=1.0
+faiss-cpu>=1.7.4
+sentence-transformers>=3.0.0
+langchain-text-splitters>=0.2.0
+openai>=1.30.0
+accelerate>=0.30.0
