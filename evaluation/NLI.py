@@ -30,9 +30,9 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MAX_LENGTH = 512
 
 
-RESULTS_ROOT = Path("../results")
-PER_QUESTION_OUTPUT = RESULTS_ROOT / "grounding_nli_per_question.jsonl"
-SUMMARY_OUTPUT = RESULTS_ROOT / "grounding_nli_summary.json"
+RESULTS_ROOT = Path("./results")
+PER_QUESTION_OUTPUT = RESULTS_ROOT / "nli_per_question.jsonl"
+SUMMARY_OUTPUT = RESULTS_ROOT / "nli_summary.json"
 
 
 def load_json(path: str) -> Any:
