@@ -4,23 +4,35 @@ from typing import Any, Dict, List, Tuple
 
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import os
+from getpass import getpass
 
+os.environ["HF_TOKEN"] = getpass("INPUT YOUR HF TOKEN HERE")
 
-#load paths for questions and files
-QUESTIONS_PATH = "questions.json"
+# load paths for questions and files
+QUESTIONS_PATH = "../data/processed/questions.json"
 
+OUTPUTS_ROOT = Path("../outputs")
 RUN_FILES = {
-    "llm_only": "llm_only.jsonl",
-    "standard_rag_fixed": "standard_rag_fixed.jsonl",
-    "standard_rag_recursive": "standard_rag_recursive.jsonl",
-    "agentic_rag_fixed": "agentic_rag_fixed.jsonl",
-    "agentic_rag_recursive": "agentic_rag_recursive.jsonl",
+    "gemma_4b_standard_rag_fixed": OUTPUTS_ROOT / "gemma_4b" / "standard_rag_fixed.jsonl",
+    "gemma_4b_standard_rag_recursive": OUTPUTS_ROOT / "gemma_4b" / "standard_rag_recursive.jsonl",
+    "gemma_4b_agentic_rag_fixed": OUTPUTS_ROOT / "gemma_4b" / "agentic_rag_fixed.jsonl",
+    "gemma_4b_agentic_rag_recursive": OUTPUTS_ROOT / "gemma_4b" / "agentic_rag_recursive.jsonl",
+    "qwen_8b_standard_rag_fixed": OUTPUTS_ROOT / "qwen_8b" / "standard_rag_fixed.jsonl",
+    "qwen_8b_standard_rag_recursive": OUTPUTS_ROOT / "qwen_8b" / "standard_rag_recursive.jsonl",
+    "qwen_8b_agentic_rag_fixed": OUTPUTS_ROOT / "qwen_8b" / "agentic_rag_fixed.jsonl",
+    "qwen_8b_agentic_rag_recursive": OUTPUTS_ROOT / "qwen_8b" / "agentic_rag_recursive.jsonl",
 }
 
 MODEL_NAME = "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli"
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 MAX_LENGTH = 512
+
+
+RESULTS_ROOT = Path("../results")
+PER_QUESTION_OUTPUT = RESULTS_ROOT / "grounding_nli_per_question.jsonl"
+SUMMARY_OUTPUT = RESULTS_ROOT / "grounding_nli_summary.json"
 
 
 def load_json(path: str) -> Any:
@@ -38,12 +50,16 @@ def load_jsonl(path: str) -> List[Dict[str, Any]]:
     return rows
 
 
-def save_json(path: str, data: Any) -> None:
+def save_json(path: str | Path, data: Any) -> None:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def save_jsonl(path: str, rows: List[Dict[str, Any]]) -> None:
+def save_jsonl(path: str | Path, rows: List[Dict[str, Any]]) -> None:
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
@@ -66,6 +82,7 @@ def extract_generated_answer(record: Dict[str, Any]) -> str:
     return ""
 
 
+
 def extract_gold_evidence_text(question_item: Dict[str, Any]) -> str:
     evs = question_item.get("gold_evidence", [])
     parts = []
@@ -78,7 +95,7 @@ def extract_gold_evidence_text(question_item: Dict[str, Any]) -> str:
     return "\n\n".join(parts)
 
 
-#load NLI model 
+# load NLI model
 
 def load_nli_model(model_name: str):
     tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -86,6 +103,7 @@ def load_nli_model(model_name: str):
     model.to(DEVICE)
     model.eval()
     return tokenizer, model
+
 
 
 def get_label_mapping(model) -> Dict[int, str]:
@@ -148,6 +166,7 @@ def grounding_score_from_nli(label: str) -> float:
     return 0.0
 
 
+
 def hallucination_from_nli(label: str) -> int:
     return 0 if label == "entailment" else 1
 
@@ -156,12 +175,12 @@ def hallucination_from_nli(label: str) -> int:
 
 def evaluate_run(
     run_name: str,
-    run_file: str,
+    run_file: str | Path,
     questions_by_id: Dict[str, Dict[str, Any]],
     tokenizer,
     model,
 ) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
-    records = load_jsonl(run_file)
+    records = load_jsonl(Path(run_file))
 
     per_question_rows = []
 
@@ -186,15 +205,14 @@ def evaluate_run(
 
         question_item = questions_by_id[qid]
         gold_evidence_text = extract_gold_evidence_text(question_item)
-        #answer = extract_generated_answer(rec)
         answer = rec.get("final_answer", "")
         if "retrieved_chunks" in rec:
             retrieved_text = " ".join([c["text"] for c in rec["retrieved_chunks"]])
-        elif "final_evidence" in rec: # Agentic format
+        elif "final_evidence" in rec:  # Agentic format
             retrieved_text = " ".join([c["text"] for c in rec["final_evidence"]])
         else:
             retrieved_text = ""
-            
+
         premise = retrieved_text
 
         if not answer:
@@ -206,7 +224,6 @@ def evaluate_run(
             continue
 
         nli_result = run_nli(
-            #premise=gold_evidence_text,
             premise=premise,
             hypothesis=answer,
             tokenizer=tokenizer,
@@ -270,6 +287,7 @@ def evaluate_run(
     return per_question_rows, summary
 
 
+
 def main() -> None:
     print(f"Loading NLI model: {MODEL_NAME}")
     print(f"Using device: {DEVICE}")
@@ -297,12 +315,12 @@ def main() -> None:
         all_rows.extend(rows)
         all_summaries.append(summary)
 
-    save_jsonl("grounding_nli_per_question.jsonl", all_rows)
-    save_json("grounding_nli_summary.json", all_summaries)
+    save_jsonl(PER_QUESTION_OUTPUT, all_rows)
+    save_json(SUMMARY_OUTPUT, all_summaries)
 
     print("\nDone.")
-    print("Saved per-question results to grounding_nli_per_question.jsonl")
-    print("Saved summary results to grounding_nli_summary.json")
+    print(f"Saved per-question results to {PER_QUESTION_OUTPUT}")
+    print(f"Saved summary results to {SUMMARY_OUTPUT}")
     print(json.dumps(all_summaries, ensure_ascii=False, indent=2))
 
 
