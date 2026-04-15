@@ -1,0 +1,17 @@
+{
+  "num_records": 20,
+  "avg_answer_quality_score": 0.0,
+  "avg_groundedness_score": 0.0,
+  "answer_quality_labels": {
+    "irrelevant": 20
+  },
+  "groundedness_labels": {
+    "ungrounded": 20
+  },
+  "joint_label_counts": {
+    "irrelevant__ungrounded": 20
+  },
+  "system": "qwen_8b_standard_rag_recursive",
+  "input_file": "../outputs/qwen_8b/standard_rag_recursive.jsonl",
+  "num_input_rows_used": 20
+}

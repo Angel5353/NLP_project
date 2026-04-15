@@ -7,6 +7,23 @@ from typing import Any, Dict, List
 
 from openai import OpenAI
 from tqdm import tqdm
+import os
+from getpass import getpass
+from pathlib import Path
+
+OUTPUTS_ROOT = Path("../outputs")
+RUN_FILES = {
+    "gemma_4b_llm_only": OUTPUTS_ROOT / "gemma_4b" / "llm_only.jsonl",
+    "gemma_4b_standard_rag_fixed": OUTPUTS_ROOT / "gemma_4b" / "standard_rag_fixed.jsonl",
+    "gemma_4b_standard_rag_recursive": OUTPUTS_ROOT / "gemma_4b" / "standard_rag_recursive.jsonl",
+    "gemma_4b_agentic_rag_fixed": OUTPUTS_ROOT / "gemma_4b" / "agentic_rag_fixed.jsonl",
+    "gemma_4b_agentic_rag_recursive": OUTPUTS_ROOT / "gemma_4b" / "agentic_rag_recursive.jsonl",
+    "qwen_8b_llm_only": OUTPUTS_ROOT / "qwen_8b" / "llm_only.jsonl",
+    "qwen_8b_standard_rag_fixed": OUTPUTS_ROOT / "qwen_8b" / "standard_rag_fixed.jsonl",
+    "qwen_8b_standard_rag_recursive": OUTPUTS_ROOT / "qwen_8b" / "standard_rag_recursive.jsonl",
+    "qwen_8b_agentic_rag_fixed": OUTPUTS_ROOT / "qwen_8b" / "agentic_rag_fixed.jsonl",
+    "qwen_8b_agentic_rag_recursive": OUTPUTS_ROOT / "qwen_8b" / "agentic_rag_recursive.jsonl",
+}
 
 
 def safe_get(d: Dict[str, Any], keys: List[str], default=""):
@@ -228,92 +245,121 @@ def summarize(results: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", type=str, required=True)
-    parser.add_argument("--output_per_question", type=str, default="llm_judge_per_question.jsonl")
-    parser.add_argument("--output_summary", type=str, default="llm_judge_summary.json")
+    parser.add_argument("--limit", type=int, default=20)
     parser.add_argument("--model", type=str, default="openai/gpt-oss-120b")
-    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--output_dir", type=str, default="./results_llm_judge")
     args = parser.parse_args()
 
-    #import os
-    #from dotenv import load_dotenv
+    HF_TOKEN = getpass("INPUT YOUR HF TOKEN HERE: ")
+    os.environ["HF_TOKEN"] = HF_TOKEN
+    client = build_client(HF_TOKEN)
 
-    #loaded = load_dotenv(".env")
-    #print("dotenv loaded:", loaded)
-    #print("HF_TOKEN:", os.getenv("HF_TOKEN"))
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
+    all_summaries = []
 
-    #hf_token = os.getenv("HF_TOKEN") 
-    #if not hf_token: 
-    #    raise ValueError("HF_TOKEN is not set. Please export HF_TOKEN first.")
-   
-    client = build_client(hf_token)
+    for run_name, input_path in RUN_FILES.items():
+        input_path = Path(input_path)
 
-    rows = []
-    with open(args.input, "r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                rows.append(json.loads(line))
+        if not input_path.exists():
+            print(f"[SKIP] Missing file: {input_path}")
+            continue
 
-    if args.limit is not None:
-        rows = rows[:args.limit]
+        print(f"\nEvaluating {run_name} ...")
 
-    results = []
+        rows = []
+        with open(input_path, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    rows.append(json.loads(line))
 
-    for row in tqdm(rows, desc="LLM judging"):
-        question_id = safe_get(row, ["question_id", "id"], default=None)
-        question = safe_get(row, ["question", "original_question", "query"])
-        answer = safe_get(row, ["answer", "generated_answer", "prediction", "response", "final_answer"])
+        if args.limit is not None:
+            rows = rows[:args.limit]
 
-        retrieved_chunks = row.get("retrieved_chunks", [])
-        if isinstance(retrieved_chunks, list):
-            evidence = "\n\n".join(
-                chunk.get("text", "") for chunk in retrieved_chunks if isinstance(chunk, dict)
-            )
-        else:
-            evidence = safe_get(
+        results = []
+
+        for row in tqdm(rows, desc=f"LLM judging {run_name}"):
+            question_id = safe_get(row, ["question_id", "id"], default=None)
+            question = safe_get(row, ["question", "original_question", "query"])
+            answer = safe_get(
                 row,
-                ["evidence", "context", "retrieved_context", "retrieved_passages"]
+                ["answer", "generated_answer", "prediction", "response", "final_answer"]
             )
-        if isinstance(evidence, list):
-            evidence = "\n\n".join(str(x) for x in evidence)
 
-        answer_quality = judge_answer_quality(
-            client=client,
-            model_name=args.model,
-            question=question,
-            answer=answer,
-        )
+            retrieved_chunks = row.get("retrieved_chunks", [])
+            if isinstance(retrieved_chunks, list) and retrieved_chunks:
+                evidence = "\n\n".join(
+                    chunk.get("text", "") for chunk in retrieved_chunks if isinstance(chunk, dict)
+                )
+            else:
+                final_evidence = row.get("final_evidence", [])
+                if isinstance(final_evidence, list) and final_evidence:
+                    evidence = "\n\n".join(
+                        chunk.get("text", "") for chunk in final_evidence if isinstance(chunk, dict)
+                    )
+                else:
+                    evidence = safe_get(
+                        row,
+                        ["evidence", "context", "retrieved_context", "retrieved_passages"],
+                        default=""
+                    )
 
-        groundedness = judge_groundedness(
-            client=client,
-            model_name=args.model,
-            question=question,
-            answer=answer,
-            evidence=evidence,
-        )
+            if isinstance(evidence, list):
+                evidence = "\n\n".join(str(x) for x in evidence)
 
-        out = {
-            "question_id": question_id,
-            "question": question,
-            "answer": answer,
-            "evidence": evidence,
-            "answer_quality": answer_quality,
-            "groundedness": groundedness,
-        }
-        results.append(out)
+            answer_quality = judge_answer_quality(
+                client=client,
+                model_name=args.model,
+                question=question,
+                answer=answer,
+            )
 
-    with open(args.output_per_question, "w", encoding="utf-8") as f:
-        for r in results:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+            groundedness = judge_groundedness(
+                client=client,
+                model_name=args.model,
+                question=question,
+                answer=answer,
+                evidence=evidence,
+            )
 
-    summary = summarize(results)
-    with open(args.output_summary, "w", encoding="utf-8") as f:
-        json.dump(summary, f, ensure_ascii=False, indent=2)
+            out = {
+                "system": run_name,
+                "question_id": question_id,
+                "question": question,
+                "answer": answer,
+                "evidence": evidence,
+                "answer_quality": answer_quality,
+                "groundedness": groundedness,
+            }
+            results.append(out)
 
-    print(f"Saved per-question results to: {args.output_per_question}")
-    print(f"Saved summary to: {args.output_summary}")
+        per_question_path = output_dir / f"{run_name}_per_question.jsonl"
+        summary_path = output_dir / f"{run_name}_summary.json"
+
+        with open(per_question_path, "w", encoding="utf-8") as f:
+            for r in results:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+
+        summary = summarize(results)
+        summary["system"] = run_name
+        summary["input_file"] = str(input_path)
+        summary["num_input_rows_used"] = len(results)
+
+        with open(summary_path, "w", encoding="utf-8") as f:
+            json.dump(summary, f, ensure_ascii=False, indent=2)
+
+        all_summaries.append(summary)
+
+        print(f"Saved per-question results to: {per_question_path}")
+        print(f"Saved summary to: {summary_path}")
+
+    all_summary_path = output_dir / "all_summary.json"
+    with open(all_summary_path, "w", encoding="utf-8") as f:
+        json.dump(all_summaries, f, ensure_ascii=False, indent=2)
+
+    print(f"\nSaved aggregated summary to: {all_summary_path}")
 
 
 if __name__ == "__main__":

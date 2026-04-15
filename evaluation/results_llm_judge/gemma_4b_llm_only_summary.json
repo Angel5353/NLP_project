@@ -1,0 +1,21 @@
+{
+  "num_records": 20,
+  "avg_answer_quality_score": 0.057499999999999996,
+  "avg_groundedness_score": 0.005,
+  "answer_quality_labels": {
+    "partially_relevant": 1,
+    "irrelevant": 18,
+    "fully_relevant": 1
+  },
+  "groundedness_labels": {
+    "ungrounded": 20
+  },
+  "joint_label_counts": {
+    "partially_relevant__ungrounded": 1,
+    "irrelevant__ungrounded": 18,
+    "fully_relevant__ungrounded": 1
+  },
+  "system": "gemma_4b_llm_only",
+  "input_file": "../outputs/gemma_4b/llm_only.jsonl",
+  "num_input_rows_used": 20
+}

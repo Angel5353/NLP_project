@@ -1,0 +1,22 @@
+{
+  "num_records": 20,
+  "avg_answer_quality_score": 0.1405,
+  "avg_groundedness_score": 0.1025,
+  "answer_quality_labels": {
+    "irrelevant": 17,
+    "fully_relevant": 3
+  },
+  "groundedness_labels": {
+    "ungrounded": 18,
+    "grounded": 2
+  },
+  "joint_label_counts": {
+    "irrelevant__ungrounded": 16,
+    "irrelevant__grounded": 1,
+    "fully_relevant__grounded": 1,
+    "fully_relevant__ungrounded": 2
+  },
+  "system": "qwen_8b_agentic_rag_recursive",
+  "input_file": "../outputs/qwen_8b/agentic_rag_recursive.jsonl",
+  "num_input_rows_used": 20
+}

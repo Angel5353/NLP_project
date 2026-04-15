@@ -1,0 +1,21 @@
+{
+  "num_records": 20,
+  "avg_answer_quality_score": 0.046,
+  "avg_groundedness_score": 0.098,
+  "answer_quality_labels": {
+    "irrelevant": 19,
+    "fully_relevant": 1
+  },
+  "groundedness_labels": {
+    "ungrounded": 18,
+    "grounded": 2
+  },
+  "joint_label_counts": {
+    "irrelevant__ungrounded": 17,
+    "irrelevant__grounded": 2,
+    "fully_relevant__ungrounded": 1
+  },
+  "system": "gemma_4b_agentic_rag_recursive",
+  "input_file": "../outputs/gemma_4b/agentic_rag_recursive.jsonl",
+  "num_input_rows_used": 20
+}
