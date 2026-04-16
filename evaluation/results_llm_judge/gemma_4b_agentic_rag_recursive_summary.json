@@ -1,18 +1,23 @@
 {
   "num_records": 20,
-  "avg_answer_quality_score": 0.046,
-  "avg_groundedness_score": 0.098,
+  "avg_answer_quality_score": 0.3255,
+  "avg_groundedness_score": 0.3775,
   "answer_quality_labels": {
-    "irrelevant": 19,
-    "fully_relevant": 1
+    "irrelevant": 12,
+    "fully_relevant": 6,
+    "partially_relevant": 2
   },
   "groundedness_labels": {
-    "ungrounded": 18,
-    "grounded": 2
+    "ungrounded": 12,
+    "grounded": 7,
+    "partially_grounded": 1
   },
   "joint_label_counts": {
-    "irrelevant__ungrounded": 17,
-    "irrelevant__grounded": 2,
+    "irrelevant__ungrounded": 11,
+    "irrelevant__grounded": 1,
+    "fully_relevant__grounded": 5,
+    "partially_relevant__partially_grounded": 1,
+    "partially_relevant__grounded": 1,
     "fully_relevant__ungrounded": 1
   },
   "system": "gemma_4b_agentic_rag_recursive",

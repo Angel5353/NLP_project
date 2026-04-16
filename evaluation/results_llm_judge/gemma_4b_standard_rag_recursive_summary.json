@@ -1,21 +1,24 @@
 {
   "num_records": 20,
-  "avg_answer_quality_score": 0.076,
-  "avg_groundedness_score": 0.1,
+  "avg_answer_quality_score": 0.3295,
+  "avg_groundedness_score": 0.41500000000000004,
   "answer_quality_labels": {
-    "irrelevant": 18,
-    "fully_relevant": 1,
-    "partially_relevant": 1
+    "fully_relevant": 5,
+    "irrelevant": 12,
+    "partially_relevant": 3
   },
   "groundedness_labels": {
-    "ungrounded": 18,
-    "grounded": 2
+    "grounded": 7,
+    "ungrounded": 11,
+    "partially_grounded": 2
   },
   "joint_label_counts": {
-    "irrelevant__ungrounded": 17,
-    "fully_relevant__grounded": 1,
+    "fully_relevant__grounded": 4,
+    "irrelevant__ungrounded": 11,
     "irrelevant__grounded": 1,
-    "partially_relevant__ungrounded": 1
+    "partially_relevant__grounded": 2,
+    "partially_relevant__partially_grounded": 1,
+    "fully_relevant__partially_grounded": 1
   },
   "system": "gemma_4b_standard_rag_recursive",
   "input_file": "../outputs/gemma_4b/standard_rag_recursive.jsonl",

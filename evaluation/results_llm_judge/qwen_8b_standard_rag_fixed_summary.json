@@ -1,17 +1,22 @@
 {
   "num_records": 20,
-  "avg_answer_quality_score": 0.06499999999999999,
-  "avg_groundedness_score": 0.0,
+  "avg_answer_quality_score": 0.258,
+  "avg_groundedness_score": 0.29500000000000004,
   "answer_quality_labels": {
-    "irrelevant": 18,
+    "irrelevant": 14,
+    "fully_relevant": 4,
     "partially_relevant": 2
   },
   "groundedness_labels": {
-    "ungrounded": 20
+    "ungrounded": 14,
+    "grounded": 6
   },
   "joint_label_counts": {
-    "irrelevant__ungrounded": 18,
-    "partially_relevant__ungrounded": 2
+    "irrelevant__ungrounded": 13,
+    "irrelevant__grounded": 1,
+    "fully_relevant__grounded": 3,
+    "partially_relevant__grounded": 2,
+    "fully_relevant__ungrounded": 1
   },
   "system": "qwen_8b_standard_rag_fixed",
   "input_file": "../outputs/qwen_8b/standard_rag_fixed.jsonl",

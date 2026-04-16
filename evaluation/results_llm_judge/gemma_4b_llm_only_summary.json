@@ -1,19 +1,21 @@
 {
   "num_records": 20,
-  "avg_answer_quality_score": 0.057499999999999996,
-  "avg_groundedness_score": 0.005,
+  "avg_answer_quality_score": 0.5515000000000001,
+  "avg_groundedness_score": 0.03,
   "answer_quality_labels": {
-    "partially_relevant": 1,
-    "irrelevant": 18,
-    "fully_relevant": 1
+    "partially_relevant": 4,
+    "fully_relevant": 10,
+    "irrelevant": 6
   },
   "groundedness_labels": {
-    "ungrounded": 20
+    "ungrounded": 19,
+    "partially_grounded": 1
   },
   "joint_label_counts": {
-    "partially_relevant__ungrounded": 1,
-    "irrelevant__ungrounded": 18,
-    "fully_relevant__ungrounded": 1
+    "partially_relevant__ungrounded": 3,
+    "fully_relevant__ungrounded": 10,
+    "partially_relevant__partially_grounded": 1,
+    "irrelevant__ungrounded": 6
   },
   "system": "gemma_4b_llm_only",
   "input_file": "../outputs/gemma_4b/llm_only.jsonl",
