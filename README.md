@@ -1,4 +1,6 @@
-# 1. Set up the environment 
+# Instructions of Legal RAG project
+
+## 1. Set up the environment 
 
 Create and activate a virtual environment, then install dependencies:
 
@@ -9,7 +11,7 @@ pip install -r requirements.txt
 ```
 
 
-# 2. Prepare knowledge base
+## 2. Prepare knowledge base
 
 Run the following script to process the raw corpus and benchmark files:
 
@@ -27,7 +29,7 @@ This step will:
 - save outputs under data/processed
 
 
-# 3. Build retrieval indexes
+## 3. Build retrieval indexes
 
 Run the following to create both fixed-chunk and recursive-chunk indexes:
 ```bash
@@ -47,7 +49,7 @@ This step will:
 After running this step, the outputs will be stored under artifacts/
 
 
-# 4. Prepare the mini evaluation set
+## 4. Prepare the mini evaluation set
 
 To generate the LegalBench-RAG-mini question set, run:
 
@@ -63,9 +65,9 @@ data/processed/questions_mini.json
 ```
 
 
-# 5. Run the experiments
+## 5. Run the experiments
 
-## To test the pipeline without LLM generator
+### To test the pipeline without LLM generator
 ```bash
 python src/run_experiments_hf_local_batched.py \
   --questions_path data/processed/questions_mini.json \  
@@ -75,9 +77,9 @@ python src/run_experiments_hf_local_batched.py \
 ```
 ---
 
-## To run the experiments with LLM generator
+### To run the experiments with LLM generator
+For example: Run on a local machine using Ollama
 
-### Option1: Run on a local machine using Ollama
 Step 1. Install Ollama for macOS
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
@@ -106,26 +108,6 @@ python src/run_experiments_hf_local_batched.py \
   --run_names llm_only
 ```
 
-### Option2: Run on a GPU server using a Hugging Face local model
-
-For example:
-```bash
-python src/run_experiments_hf_local_batched.py \
-  --questions_path data/processed/questions_mini.json \
-  --llm_provider hf_local \
-  --generator_model Qwen/Qwen3-8B \
-  --hf_device_map auto \
-  --hf_torch_dtype float16 \
-  --hf_max_new_tokens 256 \
-  --hf_batch_size 4 \
-  --batch_size 4 \
-  --output_dir outputs_llm_only \
-  --start_index 0 \
-  --end_index 100 \
-  --run_names llm_only \
-  --suppress_hf_warnings
-```
-
 Parameters:
 - `--start_index  --end_index` runs part of the question set
   - `--start_index 0 --end_index 100` run questions 1 to 100
@@ -137,4 +119,12 @@ Parameters:
   - `standard_rag_recursive`: Standard RAG using the recursive-chunk FAISS index
   - `agentic_rag_fixed`: Agentic RAG using the fixed-chunk FAISS index
   - `agentic_rag_recursive`: Agentic RAG using the recursive-chunk FAISS index
+
+
+ All the results of experiments are saved in the `outputs` folder
+ - gemma_4b
+ - qwen_8b
+
+
+## 6. Evaluation of the outputs
  
